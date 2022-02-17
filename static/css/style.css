@@ -16,10 +16,13 @@ body {
 }
 
 a,
-li>a,
-span>a {
+li {
     text-decoration: none;
     color: black;
+}
+
+ul {
+    list-style-type: none;
 }
 
 a:hover {
@@ -37,4 +40,10 @@ a:hover {
 
 .navbar {
     font-family: 'Signika Negative', sans-serif;
+}
+
+/* ----------- footer */
+
+.li-social {
+    display: inline;
 }
