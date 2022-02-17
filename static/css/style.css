@@ -15,7 +15,9 @@ body {
     color: black;
 }
 
-a {
+a,
+li>a,
+span>a {
     text-decoration: none;
     color: black;
 }
