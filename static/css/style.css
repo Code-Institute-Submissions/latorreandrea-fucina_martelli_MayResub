@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&family=UnifrakturCook:wght@700&display=swap');
+
+/* CSS rules to specify families 
+font-family: 'Signika Negative',
+sans-serif;
+font-family: 'UnifrakturCook',
+cursive; */
+
+
+
+body {
+    position: absolute;
+    top: 8em;
+    font-family: 'Signika Negative', sans-serif;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: antiquewhite;
+}
+
+/* ---------- nav bar */
+.bg-nav {
+    background-color: green;
+}
+
+.navbar-brand {
+    font-family: 'UnifrakturCook', cursive;
+}
+
+.navbar {
+    font-family: 'Signika Negative', sans-serif;
+}
