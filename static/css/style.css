@@ -12,13 +12,29 @@ body {
     position: absolute;
     top: 8em;
     font-family: 'Signika Negative', sans-serif;
-    color: black;
+    color: #B6DDF2;
+    background-color: #17191C;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 a,
-li {
+li,
+span,
+.nav-link {
     text-decoration: none;
-    color: black;
+    color: #B6DDF2;
+}
+
+li {
+    padding: 1em 1rem;
 }
 
 ul {
@@ -31,7 +47,8 @@ a:hover {
 
 /* ---------- nav bar */
 .bg-nav {
-    background-color: green;
+    background-color: #4881C1;
+
 }
 
 .navbar-brand {
@@ -40,10 +57,30 @@ a:hover {
 
 .navbar {
     font-family: 'Signika Negative', sans-serif;
+    color: #17191C;
 }
 
 /* ----------- footer */
 
+footer {
+    background-color: #476276;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+h4.footer {
+    padding-bottom: 1.5rem;
+}
+
+
 .li-social {
     display: inline;
+    padding: 0 10px;
 }
+
+
+
+/*------------Media Queries--------*/
+
+@media (max-width: 991px) {}
