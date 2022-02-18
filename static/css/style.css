@@ -12,8 +12,8 @@ body {
     position: absolute;
     top: 8em;
     font-family: 'Signika Negative', sans-serif;
-    color: #B6DDF2;
-    background-color: #17191C;
+    color: #131916;
+    background-color: #264025;
 }
 
 /* from Bulma */
@@ -47,7 +47,7 @@ a:hover {
 
 /* ---------- nav bar */
 .bg-nav {
-    background-color: #4881C1;
+    background-color: #051D03;
 
 }
 
@@ -60,10 +60,26 @@ a:hover {
     color: #17191C;
 }
 
+/* ----------- header carousel */
+.carousel.slide {
+    padding: 1rem .5rem;
+}
+
+.carousel-caption {
+    background-color: rgba(78, 82, 67, 0.4);
+    border-radius: 5px;
+}
+
+
+.carousel-item img {
+    border-radius: 5px;
+
+}
+
 /* ----------- footer */
 
 footer {
-    background-color: #476276;
+    background-color: #4E5243;
     width: 100%;
     text-align: center;
     padding-top: 10px;
