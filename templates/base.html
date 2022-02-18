@@ -35,7 +35,7 @@
     <title>Fucina Martelli {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     {% block page_header %}
     <header class="container-fluid fixed-top bg-nav">
         <nav class="navbar navbar-expand-sm  ">
@@ -123,7 +123,7 @@
     {% block content %}
     {% endblock %}
 
-    <footer>
+    <footer class="mt-auto">
         <div class="container-fluid d-flex text-center">
             <div class="row">
                 <div class="col-sm-4">

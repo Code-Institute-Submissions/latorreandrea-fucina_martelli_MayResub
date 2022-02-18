@@ -10,27 +10,25 @@ cursive; */
 
 body {
     position: absolute;
-    top: 8em;
+    top: 9em;
     font-family: 'Signika Negative', sans-serif;
     color: #131916;
     background-color: #264025;
 }
 
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+/* center element */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 a,
 li,
-span,
-.nav-link {
+span {
     text-decoration: none;
-    color: #B6DDF2;
+    color: #131916;
 }
 
 li {
@@ -40,6 +38,12 @@ li {
 ul {
     list-style-type: none;
 }
+
+.navbar-brand {
+    color: #264025;
+    font-size: xx-large;
+}
+
 
 a:hover {
     color: antiquewhite;
@@ -68,11 +72,15 @@ a:hover {
 .carousel-caption {
     background-color: rgba(78, 82, 67, 0.4);
     border-radius: 5px;
+    max-width: fit-content;
+    padding: 10px;
 }
 
 
 .carousel-item img {
     border-radius: 5px;
+    max-height: 500px;
+    max-width: 500px;
 
 }
 
