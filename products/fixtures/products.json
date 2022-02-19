@@ -1,0 +1,100 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340155",
+      "name": "Bacinetto",
+      "description": "The Bacinetto (de. Beckenhaube or Kesselhaube; fr. Bassinet; en. Basinet; po. Przyłbica) was a type of helmet of Italian origin [1] in use in medieval Europe (14th century). It is distinguished by the pointed shape, slightly tilted back, of the tile.",
+      "price": 520,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/KHM_Wien_A_12_-_Bascinet_by_Master_A%2C_Milan%2C_c._1400%2C_side.jpg",
+      "image": "bacinetto.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340156",
+      "name": "Barbuta",
+      "description": "The Barbuta is a type of helmet used by the urban militias of Italy between the fourteenth and fifteenth centuries. It completely protects the skull with a single metal block, without additional components (visor, fan, cheek guard, etc.). The general line is very reminiscent of the kranos, the ancient helmet of Ancient Greece.",
+      "price": 380,
+      "category": 1,
+      "rating": 4.8,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Barbute_MET_DP-12880-047.jpg/800px-Barbute_MET_DP-12880-047.jpg",
+      "image": "barbuta.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340157",
+      "name": "Bigoncia",
+      "description": "Bigoncia (Celada in Spanish; Salade in French; Sallet in English; Schaller in German), a word that in Italian usually designates a type of wooden bucket used in viticulture (see Bigoncio), is the name used to indicate the particular type of helmet used by the heavy cavalry of the Germanic and Burgundian circles in the Late Middle Ages. It was a helmet covering the skull, the nape and the face mask of the wearer, with a lobed section. Devoid of its own defensive devices for the jaw and throat, it needed a chin rest or a barber.",
+      "price": 630,
+      "category": 1,
+      "rating": 3.3,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sallet%2C_Kunsthistorisches_Museum%2C_Vienna%2C_Austria.jpg",
+      "image": "sallet.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340158",
+      "name": "Celata",
+      "description": "The celata is a type of helmet developed in Europe in the fifteenth century and massively used in Italy , France, Great Britain, Spain and the Netherlands. It made it possible to fully cover the wearer's head.",
+      "price": 620,
+      "category": 1,
+      "rating": 4.0,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Armet_Castelnaud.jpg/220px-Armet_Castelnaud.jpg",
+      "image": "celata.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340159",
+      "name": "Brigantina",
+      "description": "Brigantina is a type of armor that was widely spread in Europe in the 14th century and was used around the end of the 16th century. Generally speaking, it covers the bust and sometimes the part of the body immediately below the belt. It consists of a set of metal plates riveted to the inside or outside of a leather or linen core.",
+      "price": 320,
+      "category": 2,
+      "rating": 4.8,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Armet_Castelnaud.jpg/220px-Armet_Castelnaud.jpg",
+      "image": "brigantina.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340160",
+      "name": "Brigantina",
+      "description": "Brigantina is a type of armor that was widely spread in Europe in the 14th century and was used around the end of the 16th century. Generally speaking, it covers the bust and sometimes the part of the body immediately below the belt. It consists of a set of metal plates riveted to the inside or outside of a leather or linen core.",
+      "price": 320,
+      "category": 2,
+      "rating": 4.8,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Armet_Castelnaud.jpg/220px-Armet_Castelnaud.jpg",
+      "image": "brigantina.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340161",
+      "name": "Corazza",
+      "description": "Brigantina is a type of armor that was widely spread in Europe in the 14th century and was used around the end of the 16th century. Generally speaking, it covers the bust and sometimes the part of the body immediately below the belt. It consists of a set of metal plates riveted to the inside or outside of a leather or linen core.",
+      "price": 390,
+      "category": 2,
+      "rating": 4.2,
+      "image_url": "https://cdn2.picryl.com/photo/1450/01/01/breastplate-kastenbrust-6d9291-1024.jpg",
+      "image": "corazza.jpg"
+    }
+  }
+
+]

@@ -1,0 +1,67 @@
+[{
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "helmets_neck",
+      "friendly_name": "Helmets & Neck Armor"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "chest",
+      "friendly_name": "Chest Armor"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "arm",
+      "friendly_name": "Arm Armor"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "leg",
+      "friendly_name": "Leg Armor"
+    }
+  },
+
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+      "name": "swords",
+      "friendly_name": "Swords"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+      "name": "maces",
+      "friendly_name": "Maces"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": {
+      "name": "polearms",
+      "friendly_name": "Halberts & Poleaxes"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+      "name": "shields",
+      "friendly_name": "Shields"
+    }
+  }
+
+]
