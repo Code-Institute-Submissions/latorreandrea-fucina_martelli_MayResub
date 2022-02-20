@@ -56,10 +56,11 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown">Armor</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Helmets & Neck</a></li>
-                                <li><a class="dropdown-item" href="#">Chest</a></li>
-                                <li><a class="dropdown-item" href="#">Arm</a></li>
-                                <li><a class="dropdown-item" href="#">Leg</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=helmets_neck">Helmets &
+                                        Neck</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=chest">Chest</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=arm">Arm</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=leg">Leg</a></li>
                             </ul>
 
                         </li>
@@ -67,10 +68,12 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown">Weapon</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Swords</a></li>
-                                <li><a class="dropdown-item" href="#">Maces</a></li>
-                                <li><a class="dropdown-item" href="#">Halberts & Poleaxes</a></li>
-                                <li><a class="dropdown-item" href="#">Shields</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=swords">Swords</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=maces">Maces</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=polearms">Halberts &
+                                        Poleaxes</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=shields">Shields</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
