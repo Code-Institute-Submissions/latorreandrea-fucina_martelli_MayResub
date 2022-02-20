@@ -97,6 +97,7 @@ footer {
     width: 100%;
     text-align: center;
     padding-top: 10px;
+    margin-top: 10px;
 }
 
 h4.footer {
@@ -142,6 +143,23 @@ h4.footer {
     background-color: #025ce2;
     border-color: #0257d5;
     box-shadow: none
+}
+
+.btn {
+    margin: 5px;
+}
+
+/*------------ product detail page */
+
+.card-detail {
+    color: antiquewhite;
+    font-weight: 600;
+}
+
+.img-detail {
+    background-color: #4E5243;
+    padding: 10px;
+    border: 1px solid #051D03;
 }
 
 /*------------Media Queries--------*/
