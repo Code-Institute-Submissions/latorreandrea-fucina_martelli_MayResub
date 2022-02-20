@@ -112,7 +112,7 @@ h4.footer {
 /*------------- Products page */
 
 .card {
-    background-color: #264025;
+    background-color: #4E5243;
     width: 300px;
 
     padding: 10px;
@@ -121,9 +121,15 @@ h4.footer {
 }
 
 .inner-card {
-    background: #4E5243;
+    background: #264025;
+    color: antiquewhite;
     padding: 10px;
     border-radius: 5px
+}
+
+.inner-card:hover {
+    box-shadow: 4px 5px 5px 2px #051D03;
+    transform: scale(1.1)
 }
 
 .img-fluid.rounded {
