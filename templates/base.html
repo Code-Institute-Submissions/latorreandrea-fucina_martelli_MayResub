@@ -40,7 +40,7 @@
     <header class="container-fluid fixed-top bg-nav">
         <nav class="navbar navbar-expand-sm  ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Fucina Martelli</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Fucina Martelli</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon fas fa-caret-square-down">
@@ -49,6 +49,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}">All Products</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown">Armor</a>
