@@ -130,7 +130,8 @@ h4.footer {
 
 .inner-card:hover {
     box-shadow: 4px 5px 5px 2px #051D03;
-    transform: scale(1.1)
+    transform: scale(1.1);
+    z-index: 1000;
 }
 
 .img-fluid.rounded {

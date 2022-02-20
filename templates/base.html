@@ -82,9 +82,12 @@
                         </li>
                     </ul>
                 </div>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Search</button>
+                <!--Search Form-->
+                <form class="d-flex" action="{% url 'products' %}" method="GET">
+                    <input class="form-control me-2" name="q" type="text" placeholder="Search...">
+                    <button class="btn btn-primary" type="submit"><span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span></button>
                 </form>
 
                 {% if user.is_authenticated %}
