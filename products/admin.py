@@ -11,12 +11,14 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
     )
     ordering = ('name',)
+    search_fields = ['name', 'category__name']
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
     ordering = ('name',)
+    search_fields = ['name']
 
 
 # Register models for products to keep update the catalougue from admin panel
