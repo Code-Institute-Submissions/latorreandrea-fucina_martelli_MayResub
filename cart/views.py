@@ -18,8 +18,12 @@ def add_to_cart(request, id):
         cart[id] = int(cart[id]) + quantity
     else:
         cart[id] = cart.get(id, quantity)
-
-    request.session['cart'] = cart
+# prevent users order more than 10 piece
+    if cart[id] < 11:
+        request.session['cart'] = cart
+    else:
+        print("You can't order more than 10 piece")
+    
     return redirect(redirect_url)
 
 
