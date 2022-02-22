@@ -163,10 +163,13 @@ h4.footer {
     border: 1px solid #051D03;
 }
 
-/*------------Accounts ------------*/
-.container-accounts {
-    padding-top: 1rem;
+/*------------Cart page------------*/
+
+.img-cart {
+    max-width: 60px;
+    max-height: 60px;
 }
+
 
 /*------------Media Queries--------*/
 
