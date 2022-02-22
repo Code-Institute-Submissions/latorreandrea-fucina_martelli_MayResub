@@ -70,6 +70,11 @@ a:hover {
     color: antiquewhite;
 }
 
+/* --------- Cart Icon*/
+.badge {
+    float: right;
+}
+
 /* ----------- header carousel */
 .carousel.slide {
     padding: 1rem .5rem;
