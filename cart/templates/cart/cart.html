@@ -6,19 +6,18 @@ Products
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid container-cart justify-content-center">
+<div class="container-md  container-cart justify-content-center">
     <div class="row">
         {% if product_count > 0 %}
-        <div class="col-4">
+        <div class="col-8">
             <hr>
             <h1>
                 My Order
             </h1>
             <hr>
+            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">continue shopping ></button>
         </div>
-        <div class="col-4">
-            <button>continue shopping ></button>
-        </div>
+        <br>
         {% for item in cart_items %}
         <div class="row item-line-description">
             <div class="col-3">
@@ -36,8 +35,9 @@ Products
             <hr>
             <h1>Your cart is empty</h1>
             <hr>
-            <button class="btn btn-primary px-3" href=""><a href="{% url 'products' %}">Back to
+            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
                     shop</a></button>
+            <p>{{ test }}</p>
         </div>
         {% endif %}
     </div>

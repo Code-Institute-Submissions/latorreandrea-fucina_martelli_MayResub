@@ -14,6 +14,7 @@ def cart_contents(request):
     total_product = 0
     product_count = 0    
     total = 0
+    
 
     for id, quantity in cart.items():
         product = get_object_or_404(Product, pk=id)

@@ -163,6 +163,11 @@ h4.footer {
     border: 1px solid #051D03;
 }
 
+/*------------Accounts ------------*/
+.container-accounts {
+    padding-top: 1rem;
+}
+
 /*------------Media Queries--------*/
 
 @media (max-width: 991px) {}
