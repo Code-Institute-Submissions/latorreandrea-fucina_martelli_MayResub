@@ -132,7 +132,18 @@
 
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/error.html' %}
+        {% else %}
+        {% include 'includes/toasts/success.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+
+    </div>
     {% endif %}
     {% endblock %}
 

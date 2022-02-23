@@ -175,6 +175,14 @@ h4.footer {
     max-height: 60px;
 }
 
+/*-------------Toasts-------------*/
+.message-container {
+    position: fixed;
+    top: 6em;
+    right: 0;
+    z-index: 9999999;
+}
+
 
 /*------------Media Queries--------*/
 
