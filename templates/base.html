@@ -38,92 +38,87 @@
 <body class="d-flex flex-column min-vh-100">
     {% block page_header %}
     <header class="container-fluid fixed-top bg-nav">
-        <nav class="navbar navbar-expand-sm  ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Fucina Martelli</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon fas fa-caret-square-down">
-
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'products' %}">All Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown">Armor</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=helmets_neck">Helmets &
-                                        Neck</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=chest">Chest</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=arm">Arm</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=leg">Leg</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown">Weapon</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=swords">Swords</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=maces">Maces</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=polearms">Halberts &
-                                        Poleaxes</a></li>
-                                <li><a class="dropdown-item" href="{% url 'products' %}?category=shields">Shields</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">How to Start</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-                    </ul>
-                    <!--Search Form-->
-
-                    <form class="d-flex" action="{% url 'products' %}" method="GET">
-                        <input class="form-control me-2" name="q" type="text" placeholder="Search...">
-                        <button class="btn btn-primary" type="submit"><span class="icon">
-                                <i class="fas fa-search"></i>
-                            </span></button>
-                    </form>
-                </div>
-
-
-                {% if user.is_authenticated %}
-                <span>
-                    <a class="nav-link" href="#">My Account</a>
+        <nav class="navbar navbar-expand-lg  ">
+            <a class="navbar-brand" href="{% url 'home' %}">Fucina Martelli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon fas fa-caret-square-down">
                 </span>
-                <span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'products' %}">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Armor</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=helmets_neck">Helmets &
+                                    Neck</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=chest">Chest</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=arm">Arm</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=leg">Leg</a></li>
+                        </ul>
 
-                    <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Weapon</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=swords">Swords</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=maces">Maces</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=polearms">Halberts &
+                                    Poleaxes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=shields">Shields</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How to Start</a>
 
-                </span>
-                {% else %}
-                <span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                </ul>
+                <!--Search Form-->
 
-                    <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
-
-                </span>
-                {% endif %}
-                <span>
-
-                    <a class="nav-link" href="{% url 'view_cart' %}" alt="Cart"><i class="fas fa-shopping-basket"></i>
-                        {% if product_count > 0 %}
-                        <label class="badge badge-warning">{{ product_count }}</label>
-                        {% endif %}
-                    </a>
-
-                </span>
-
-
-
+                <form class="d-flex" action="{% url 'products' %}" method="GET">
+                    <input class="form-control me-2" name="q" type="text" placeholder="Search...">
+                    <button class="btn btn-primary" type="submit"><span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span></button>
+                </form>
             </div>
+
+
+            {% if user.is_authenticated %}
+            <span>
+                <a class="nav-link" href="#">My Account</a>
+            </span>
+            <span>
+
+                <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+
+            </span>
+            {% else %}
+            <span>
+
+                <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
+
+            </span>
+            {% endif %}
+            <span>
+
+                <a class="nav-link" href="{% url 'view_cart' %}" alt="Cart"><i class="fas fa-shopping-basket"></i>
+                    {% if product_count > 0 %}
+                    <label class="badge badge-warning">{{ product_count }}</label>
+                    {% endif %}
+                </a>
+
+            </span>
+
+
+
+
         </nav>
 
 
