@@ -40,7 +40,7 @@ ul {
 }
 
 .navbar-brand {
-    color: #264025;
+    color: antiquewhite;
     font-size: xx-large;
 }
 
@@ -51,6 +51,10 @@ a:hover {
 }
 
 /* ---------- nav bar */
+header {
+    box-shadow: 0px 5px 10px #131916;
+}
+
 .bg-nav {
     background-color: #051D03;
 
@@ -63,16 +67,46 @@ a:hover {
 
 .navbar {
     font-family: 'Signika Negative', sans-serif;
-    color: #17191C;
+    color: antiquewhite;
 }
 
 .navbar-toggler-icon {
     color: antiquewhite;
 }
 
+a.nav-link {
+    color: antiquewhite;
+}
+
+a.nav-link.dropdown-toggle:hover,
+a.nav-link:hover {
+    color: antiquewhite;
+    border-bottom: 5px solid antiquewhite;
+    margin-bottom: -5px;
+}
+
+a.dropdown-item {
+    color: antiquewhite;
+}
+
+a.dropdown-item:hover {
+    border-bottom: 5px solid #4E5243;
+    margin-bottom: -5px;
+}
+
+ul.dropdown-menu.show {
+    background-color: #051D03;
+    max-width: fit-content;
+}
+
 /* --------- Cart Icon*/
 .badge {
     float: right;
+}
+
+label.badge.badge-warning {
+    padding: 0em 0em !important;
+
 }
 
 /* ----------- header carousel */
