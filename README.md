@@ -91,6 +91,7 @@ The website is designed to be responsive and accessible on all devices.
   16. Use reviews to increase customer satisfaction.
   17. Find the best way to allow communication bewteen customers and the organization.
   19. Inform users of any changes to the regulations of this sport
+  20. Limit the request for products to a maximum of 10 per order as production takes from 2-3 months per type of product
 
 ---
 
