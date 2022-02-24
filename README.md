@@ -70,7 +70,8 @@ The website is designed to be responsive and accessible on all devices.
   1. Be able to easily navigate throughout the site to visualise content and contacts.
   2. Check out a specific product, visualise the relative details and price.
   3. Buy the product I want.
-  4. In order to be updated about the news of the blacksmiths group also through social media.
+  4. choose the material of the product (steel and titanium are allowed in this sport)
+  5. In order to be updated about the news of the blacksmiths group also through social media.
 
  #### As a registered user/frequent visitor I want to (in addition to the anonymous user functionalities):
   5. Be able to log in.
