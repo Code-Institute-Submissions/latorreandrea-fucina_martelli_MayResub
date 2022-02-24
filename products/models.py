@@ -4,10 +4,16 @@ from django.db import models
 # Create your models here.
 
 DISCOUNT = (
-    ("1", "no"),
-    ("2", "10% discount"),
-    ("3", "20% discount"),
+    ("0", "no"),
+    ("10", "10% discount"),
+    ("20", "20% discount"),
     )
+
+MATERIAL = (
+    ('steel', 'steel'),
+    ('titanium', 'titanium'),   
+    )
+
 
 
 class Category(models.Model):
@@ -32,6 +38,8 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     discount = models.CharField(max_length=100,
                   choices=DISCOUNT, default=1)
+    material = models.CharField(max_length=100,
+                  choices=MATERIAL, default=0)
 
     def __str__(self):
         return self.name
