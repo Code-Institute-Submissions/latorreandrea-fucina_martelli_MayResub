@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=UnifrakturCook:wght@700&display=swap');
 
 /* CSS rules to specify families 
-font-family: 'Signika Negative',
+
+font-family: 'Rubik',
 sans-serif;
 font-family: 'UnifrakturCook',
-cursive; */
+cursive;
+*/
 
 
 
 body {
-    position: absolute;
-    top: 9em;
-    font-family: 'Signika Negative', sans-serif;
+    background: #27441E;
+    padding-top: 9em;
+    font-family: 'Rubik', sans-serif;
     color: #131916;
-    background-color: #264025d3;
+
 }
 
 /* center element */
@@ -66,7 +68,7 @@ header {
 }
 
 .navbar {
-    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Rubik', sans-serif;
     color: antiquewhite;
 }
 
@@ -113,6 +115,10 @@ label.badge.badge-warning {
 }
 
 /* ----------- header carousel */
+#demo {
+    background-image: linear-gradient(to bottom, #27441e, #203c1a, #1a3516, #132d12, #0e260d, #0e260d, #0e260d, #0e260d, #132d12, #1a3516, #203c1a, #27441e);
+}
+
 .carousel.slide {
     padding: 1rem .5rem;
 }
@@ -154,21 +160,24 @@ h4.footer {
 
 /*------------- Products page */
 
-.card {
-    background-color: #4E5243;
+.row.products .card {
+
     width: 300px;
     padding: 10px;
-    border: 1px solid #051D03;
     margin: 10px auto;
+    background-color: inherit !important;
+    border: none !important;
 }
 
 .inner-card {
-    background: #264025;
-    color: antiquewhite;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     transition-property: transform box-shadow;
     transition-duration: 1s;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .inner-card:hover {
@@ -177,9 +186,11 @@ h4.footer {
     z-index: 1000;
 }
 
-.img-fluid.rounded {
+.img-fluid {
     height: 350px;
     width: 350px;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .btn:focus {
@@ -191,6 +202,10 @@ h4.footer {
 
 .btn {
     margin: 5px;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*------------ product detail page */
