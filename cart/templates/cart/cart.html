@@ -19,29 +19,30 @@ Products
             <hr>
         </div>
         <br>
+    </div>
 
-
+    <div class="row">
         <table class="table table-sm  table-hover table-glass">
             <thead>
                 <tr>
-                    <th scope="col">Product Info</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Modify</th>
+                    <th scope="col-3">Product Info</th>
+                    <th scope="col-3">Price</th>
+                    <th scope="col-3">Qty</th>
+                    <th scope="col-3">Modify</th>
 
                 </tr>
             </thead>
 
             {% for item in cart_items %}
             <tr class="align-middle">
-                <td class="p-3">
+                <td>
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <img class="img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 </td>
-                <td class="py-2">
+                <td>
                     <p class="my-0"><strong>{{ item.product.price }}</strong><i class="fas fa-euro-sign"></i></p>
                 </td>
-                <td class="py-2">
+                <td>
                     <div class="quantity-form col-sm w-50">
                         <form method="POST" action="{% url 'amend_cart' item.product.id %}">
                             {% csrf_token %}
@@ -60,7 +61,7 @@ Products
                     </div>
 
                 </td>
-                <td class="py-2">
+                <td>
 
                     <div class="quantity-form col-sm my-0">
 
@@ -103,32 +104,32 @@ Products
                     </tr>
                 </table>
         </table>
+    </div>
 
 
+    {%else%}
+    <div class="row">
+        <div class="cart-empty">
+            <div class="col-12">
+                <hr>
+                <h1>Your cart is empty</h1>
+                <hr>
+                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
+                        shop</a></button>
 
-        {%else%}
-        <div class="row ">
-            <div class="cart-empty">
-                <div class="col-12">
-                    <hr>
-                    <h1>Your cart is empty</h1>
-                    <hr>
-                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
-                            shop</a></button>
-
-                </div>
-                <div class="col-12">
-                    <p>Or explore the world of buhurt</p>
-                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Home</a></button>
-                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">About Us</a></button>
-
-                </div>
             </div>
+            <div class="col-12">
+                <p>Or explore the world of buhurt</p>
+                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Home</a></button>
+                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">About Us</a></button>
 
+            </div>
         </div>
 
-
-        {% endif %}
     </div>
+
+
+    {% endif %}
+</div>
 </div>
 {% endblock %}

@@ -15,6 +15,7 @@ body {
     padding-top: 9em;
     font-family: 'Rubik', sans-serif;
     color: antiquewhite;
+    overflow-x: hidden;
 }
 
 /* center element */
@@ -144,6 +145,7 @@ label.badge.badge-warning {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-bottom: #165b1b solid 1px;
 }
 
 .wave {
@@ -155,6 +157,7 @@ footer {
     width: 100%;
     text-align: center;
     padding-top: 10px;
+    border-top: #165b1b solid 1px;
 
 }
 
