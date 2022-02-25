@@ -21,7 +21,7 @@ Products
         <br>
 
 
-        <table class="table table-sm table-striped table-hover">
+        <table class="table table-sm table-striped table-hover table-glass">
             <thead>
                 <tr>
                     <th scope="col">Product Info</th>
@@ -83,7 +83,7 @@ Products
             <div class="col-md-4 col-sm-12">
 
 
-                <table class="table">
+                <table class="table table-glass">
 
                     <thead>
                         <tr>
@@ -107,14 +107,27 @@ Products
 
 
         {%else%}
-        <div class="col">
-            <hr>
-            <h1>Your cart is empty</h1>
-            <hr>
-            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
-                    shop</a></button>
+        <div class="row ">
+            <div class="cart-empty">
+                <div class="col-12">
+                    <hr>
+                    <h1>Your cart is empty</h1>
+                    <hr>
+                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
+                            shop</a></button>
+
+                </div>
+                <div class="col-12">
+                    <p>Or explore the world of buhurt</p>
+                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Home</a></button>
+                    <button class="btn btn-primary px-3"><a href="{% url 'products' %}">About Us</a></button>
+
+                </div>
+            </div>
 
         </div>
+
+
         {% endif %}
     </div>
 </div>
