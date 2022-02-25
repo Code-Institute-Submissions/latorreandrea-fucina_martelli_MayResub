@@ -225,12 +225,24 @@ h4.footer {
 .card-detail {
     color: antiquewhite;
     font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(3, 66, 6, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .img-detail {
-    background-color: #4E5243;
+
     padding: 10px;
-    border: 1px solid #051D03;
+
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(3, 66, 6, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+
 }
 
 /*------------Cart page------------*/
