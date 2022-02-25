@@ -11,10 +11,15 @@ cursive;
 
 
 body {
-    background: #27441E;
+    background-image: url(/media/bg.jpg);
+    background-position-x: center;
+    background-size: initial;
+    background-attachment: fixed;
+
+    background-color: initial;
     padding-top: 9em;
     font-family: 'Rubik', sans-serif;
-    color: #131916;
+    color: antiquewhite;
 
 }
 
@@ -30,7 +35,7 @@ a,
 li,
 span {
     text-decoration: none;
-    color: #131916;
+    color: antiquewhite;
 }
 
 li {
@@ -39,6 +44,7 @@ li {
 
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 .navbar-brand {
@@ -115,9 +121,7 @@ label.badge.badge-warning {
 }
 
 /* ----------- header carousel */
-#demo {
-    background-image: linear-gradient(to bottom, #27441e, #203c1a, #1a3516, #132d12, #0e260d, #0e260d, #0e260d, #0e260d, #132d12, #1a3516, #203c1a, #27441e);
-}
+
 
 .carousel.slide {
     padding: 1rem .5rem;
