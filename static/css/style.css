@@ -139,7 +139,7 @@ label.badge.badge-warning {
 /* ----------- footer */
 
 .spacer {
-    aspect-ratio: 16/9;
+    aspect-ratio: 960/25;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
