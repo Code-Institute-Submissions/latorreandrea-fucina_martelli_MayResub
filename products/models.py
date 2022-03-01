@@ -9,11 +9,6 @@ DISCOUNT = (
     ("20", "20% discount"),
     )
 
-MATERIAL = (
-    ('steel', 'steel'),
-    ('titanium', 'titanium'),   
-    )
-
 
 
 class Category(models.Model):
@@ -38,8 +33,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     discount = models.CharField(max_length=100,
                   choices=DISCOUNT, default=1)
-    material = models.CharField(max_length=100,
-                  choices=MATERIAL, default=0)
+    material = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

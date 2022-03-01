@@ -36,7 +36,7 @@ Products
             {% for item in cart_items %}
             <tr class="align-middle">
                 <td>
-                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                    <p class="my-0"><strong>{{ item.product.name }} in {{ item.material}} </strong></p>
                     <img class="img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 </td>
                 <td>
@@ -44,19 +44,20 @@ Products
                 </td>
                 <td>
                     <div class="quantity-form col-sm w-50">
-                        <form method="POST" action="{% url 'amend_cart' item.product.id %}">
-                            {% csrf_token %}
-                            <div class="input-group align-middle">
-                                <input name="quantity" type="number" min="1" max="10" class="form-control"
-                                    placeholder="Quantity" value='{{item.quantity}}'>
+                        <form method="POST" action="#"></form>
+                        <!--                       <form method="POST" action="{% url 'amend_cart' item.product.id %}"> -->
+                        {% csrf_token %}
+                        <div class="input-group align-middle">
+                            <input name="quantity" type="number" min="1" max="10" class="form-control"
+                                placeholder="Quantity" value='{{item.quantity}}'>
 
-                                <div>
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary amend-btn"><span
-                                                aria-hidden="true"></span>Amend</button>
-                                    </span>
-                                </div>
+                            <div>
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary amend-btn"><span
+                                            aria-hidden="true"></span>Amend</button>
+                                </span>
                             </div>
+                        </div>
                         </form>
                     </div>
 
