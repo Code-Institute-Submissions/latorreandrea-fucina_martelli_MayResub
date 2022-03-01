@@ -17,42 +17,22 @@ def add_to_cart(request, id):
     cart = request.session.get('cart', {})
     product = Product.objects.get(pk=id)
     material = request.POST.get('material')
-    data = {"product": id, "material": material, "quantity": quantity}
+    data = {"product": product, "material": material, "quantity": quantity}
     request.session["cart"] = cart
     
-    if id in cart:
-        cart[id] = int(cart[id]) + int(data['quantity'])       
-        print(data)
-        print('aggiunto oggetto')
+    if id in cart:        
+        cart[id]['quantity'] = int(quantity) + cart[id]['quantity']
     else:
         cart[id] = cart.get(id, data)
 
-    print(request.session["cart"])
-    print('hai mandato oggetto nuovo in cart')   
-    
-        
-    return redirect(redirect_url)
-
-
-
-
-
-
-'''
-    if id in cart:
-        cart[id] = int(cart[id]) + quantity
-        messages.success(request, f"Updated {product.name} to your bag")
-    else:
-        cart[id] = cart.get(id, quantity)
-        messages.success(request, f"Added {product.name} to your bag")
 # prevent users order more than 10 piece
     
-    if cart[id] < 11:
+    if cart[id]['quantity'] < 11:
         request.session['cart'] = cart
     else:
         messages.error(request, f"You can't order more than 10 piece")
         return render(request, 'home/500.html')       
-    
+        
     return redirect(redirect_url)
 
 
@@ -66,11 +46,8 @@ def amend_cart(request, id):
 
     product = Product.objects.get(pk=id)
 
+    cart[id]['quantity'] = int(quantity)
 
-    if quantity > 0:
-        cart[id] = quantity
-    else:
-        cart.pop(id)
 
     request.session['cart'] = cart
     messages.success(request, f"Updated {product.name} to your bag")
@@ -90,4 +67,3 @@ def remove_item(request, id):
     request.session['cart'] = cart
     messages.success(request, f"Removed {product.name} from your bag")
     return redirect(reverse('view_cart'))
-'''

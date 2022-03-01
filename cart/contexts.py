@@ -16,13 +16,12 @@ def cart_contents(request):
     total = 0
 
     for id, data in cart.items():
+        print(id)
         product = get_object_or_404(Product, pk=int(id))
         total += data['quantity'] * product.price
         product_count += data['quantity']
         cart_items.append(data)
-    
+        print(data)
     print(cart)
-    print('siamo nel cart')
-        
     
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
