@@ -42,15 +42,22 @@ def add_to_cart(request, id):
 
     return redirect(redirect_url)
 
+def remove_item(request, id):
+    """
+    Remove the specified product from the cart
+    """
+    product = Product.objects.get(pk=id)
+
+    cart = request.session.get('cart', {})
+
+    cart.pop(id)
+
+    request.session['cart'] = cart
+    messages.success(request, f"Removed {product.name} from your bag")
+    return redirect(reverse('view_cart'))
 
 '''    
-    if cart[id]['quantity'] < 11:
-        request.session['cart'] = cart
-    else:
-        messages.error(request, f"You can't order more than 10 piece")
-        return render(request, 'home/500.html')       
-        
-    return redirect(redirect_url)
+
 
 
 def amend_cart(request, id):
@@ -71,17 +78,5 @@ def amend_cart(request, id):
     return redirect(reverse('view_cart'))
 
 
-def remove_item(request, id):
-    """
-    Remove the specified product from the cart
-    """
-    product = Product.objects.get(pk=id)
 
-    cart = request.session.get('cart', {})
-
-    cart.pop(id)
-
-    request.session['cart'] = cart
-    messages.success(request, f"Removed {product.name} from your bag")
-    return redirect(reverse('view_cart'))
 '''
