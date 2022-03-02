@@ -19,17 +19,22 @@ def add_to_cart(request, id):
     material = request.POST.get('material')
     data = {"product": id, "material": material, "quantity": quantity}
     request.session["cart"] = cart
-
+    
     if id in cart:
-        data_material = data['material'] 
-        stored_material = cart[id]['material']
-        if data_material == stored_material:
-            add_qty = data['quantity']
-            cart[id]['quantity'] += add_qty
-            messages.success(request, f"Updated {product.name} to your bag")
+        if cart[id]['quantity'] < 11: # prevent users order more than 10 piece
+            data_material = data['material'] 
+            stored_material = cart[id]['material']
+            if data_material == stored_material:
+                add_qty = data['quantity']
+                cart[id]['quantity'] += add_qty
+                messages.success(request, f"Updated {product.name} to your bag")
+            else:            
+                cart[id] = cart.get(id, data)
+                print(cart)
+                messages.error(request, f"You already have {product.name} in the cart of another material. For logistical reasons we cannot sell the same product in different materials in the same order")
         else:
-            cart[id] = cart.get(id, data)
-            messages.success(request, f"Added {product.name} to your bag")
+            messages.error(request, f"You can't order more than 10 piece")
+            return render(request, 'home/500.html')
 
     else:
         cart[id] = cart.get(id, data)
@@ -37,7 +42,7 @@ def add_to_cart(request, id):
 
     return redirect(redirect_url)
 
-# prevent users order more than 10 piece
+
 '''    
     if cart[id]['quantity'] < 11:
         request.session['cart'] = cart
