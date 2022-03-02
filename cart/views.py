@@ -11,22 +11,34 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
-    
+
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')  # taked in the product detail page    
+    redirect_url = request.POST.get('redirect_url')  # taked in the product detail page
     cart = request.session.get('cart', {})
     product = Product.objects.get(pk=id)
     material = request.POST.get('material')
-    data = {"product": product, "material": material, "quantity": quantity}
+    data = {"product": id, "material": material, "quantity": quantity}
     request.session["cart"] = cart
-    
-    if id in cart:        
-        cart[id]['quantity'] = int(quantity) + cart[id]['quantity']
+
+    if id in cart:
+        data_material = data['material'] 
+        stored_material = cart[id]['material']
+        if data_material == stored_material:
+            add_qty = data['quantity']
+            cart[id]['quantity'] += add_qty
+            messages.success(request, f"Updated {product.name} to your bag")
+        else:
+            cart[id] = cart.get(id, data)
+            messages.success(request, f"Added {product.name} to your bag")
+
     else:
         cart[id] = cart.get(id, data)
+        messages.success(request, f"Added {product.name} to your bag")
+
+    return redirect(redirect_url)
 
 # prevent users order more than 10 piece
-    
+'''    
     if cart[id]['quantity'] < 11:
         request.session['cart'] = cart
     else:
@@ -67,3 +79,4 @@ def remove_item(request, id):
     request.session['cart'] = cart
     messages.success(request, f"Removed {product.name} from your bag")
     return redirect(reverse('view_cart'))
+'''
