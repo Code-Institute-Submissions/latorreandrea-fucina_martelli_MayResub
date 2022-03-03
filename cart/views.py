@@ -11,56 +11,41 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
-
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')  # taked in the product detail page
     cart = request.session.get('cart', {})
-    product = Product.objects.get(pk=id)
-    material = request.POST.get('material')
-    data = {"product": id, "material": material, "quantity": quantity}
-    request.session["cart"] = cart
+    request.session['material'] = request.POST.get('material')
     
-    if id in cart:
-        if cart[id]['quantity'] < 11: # prevent users order more than 10 piece
-            data_material = data['material'] 
-            stored_material = cart[id]['material']
-            if data_material == stored_material:
-                add_qty = data['quantity']
-                cart[id]['quantity'] += add_qty
-                messages.success(request, f"Updated {product.name} to your bag")
-            else:            
-                cart[id] = cart.get(id, data)
-                print(cart)
-                messages.error(request, f"You already have {product.name} in the cart of another material. For logistical reasons we cannot sell the same product in different materials in the same order")
-        else:
-            messages.error(request, f"You can't order more than 10 piece")
-            return render(request, 'home/500.html')
+    data = {}
+    data['product'] = id
+    data['material'] = request.POST.get('material')
+    data['quantity'] = quantity
 
+    element_to_add = False
+    if len(cart)>0:
+        for k,v in cart.items():
+            if data['product'] == v['product'] and data['material'] == v['material']:
+                tot = quantity + v['quantity']
+                data['quantity'] = tot
+                cart[k].update(data)
+                break
+            else:
+                if int(k)>=len(cart):
+                    element_to_add = True
     else:
-        cart[id] = cart.get(id, data)
-        messages.success(request, f"Added {product.name} to your bag")
+        cart[1] = data
+
+    if element_to_add:
+        cart[len(cart)+1] = data
+
+    print(cart)
+
+    request.session['cart'] = cart
+    redirect_url = request.POST.get('redirect_url')  # taked in the product detail page
 
     return redirect(redirect_url)
 
-def remove_item(request, id):
-    """
-    Remove the specified product from the cart
-    """
-    product = Product.objects.get(pk=id)
 
-    cart = request.session.get('cart', {})
-
-    cart.pop(id)
-
-    request.session['cart'] = cart
-    messages.success(request, f"Removed {product.name} from your bag")
-    return redirect(reverse('view_cart'))
-
-'''    
-
-
-
-def amend_cart(request, id):
+def amend_cart(request, id, material):
     """
     Adjust the quantity of the specified product to the specified
     amount
@@ -70,13 +55,40 @@ def amend_cart(request, id):
 
     product = Product.objects.get(pk=id)
 
-    cart[id]['quantity'] = int(quantity)
+    data = {}
 
+    for k,v in cart.items():
+        if v['product'] == str(id) and v['material'] == material:
+            data['product'] = cart[k]['product']
+            data['material'] = cart[k]['material']
+            data['quantity'] = quantity
+
+            cart[k] = data
 
     request.session['cart'] = cart
     messages.success(request, f"Updated {product.name} to your bag")
     return redirect(reverse('view_cart'))
 
 
+def remove_item(request, id, material):
+    """
+    Remove the specified product from the cart
+    """
+    product = Product.objects.get(pk=id)
 
-'''
+    cart = request.session.get('cart', {})
+    index_to_remove = None
+
+    for k,v in cart.items():
+        if v['product'] == str(id) and v['material'] == material:
+            index_to_remove = k
+    
+    if index_to_remove != None:
+        cart.pop(index_to_remove)
+
+    request.session['cart'] = cart
+    messages.success(request, f"Removed {product.name} from your bag")
+    return redirect(reverse('view_cart'))
+
+
+
