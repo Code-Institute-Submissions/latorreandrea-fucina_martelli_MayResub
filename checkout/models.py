@@ -54,15 +54,21 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=False, related_name='lineitems')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=False)
     quantity = models.IntegerField(blank=False)
+    material = models.CharField(max_length=50)
     
 
     def save(self, *args, **kwargs):
         """
         Save method to set lineitem total
         """
-        
-        self.lineitem_total = self.product.price * self.quantity
-        super().save(*args, **kwargs)
+        if self.material == "steel":
+
+            self.lineitem_total = self.product.price * self.quantity
+            super().save(*args, **kwargs)
+
+        else :
+            self.lineitem_total = (self.product.price + 200) * self.quantity
+            super().save(*args, **kwargs)
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'

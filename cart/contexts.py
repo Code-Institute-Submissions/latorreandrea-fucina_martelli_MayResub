@@ -18,21 +18,19 @@ def cart_contents(request):
     
     if len(cart)>0:
         for i in cart:
-            product = get_object_or_404(Product, pk=int(cart[str(i)]['product']))
-            total += cart[i]['quantity'] * product.price
-            product_count += cart[i]['quantity']
-            cart_items.append({'product': product, 'quantity': cart[i]['quantity'] ,'product': product, 'material':cart[i]['material']})
+            if cart[i]['material'] == 'steel':
 
-    # print(cart_items)
-    ''' for id, quantity in cart.items(): 
-        product = get_object_or_404(Product, pk=int(id))
-        print(product)
+                product = get_object_or_404(Product, pk=int(cart[str(i)]['product']))
+                total += cart[i]['quantity'] * product.price
+                product_count += cart[i]['quantity']
+                cart_items.append({'product': product, 'quantity': cart[i]['quantity'] ,'product': product, 'material':cart[i]['material']})
 
-        if 'material' in request.session:
-            product.material = request.session['material']
-            print(product.material)
-            total += quantity * product.price
-            product_count += quantity
-            cart_items.append({'id': id, 'quantity': quantity,'product': product, 'material':product.material}) '''
+            else :
+                product = get_object_or_404(Product, pk=int(cart[str(i)]['product']))
+                total += cart[i]['quantity'] * (product.price + 200)
+                product_count += cart[i]['quantity']
+                cart_items.append({'product': product, 'quantity': cart[i]['quantity'] ,'product': product, 'material':cart[i]['material']})
+                print(product.price + 200)
+                print(type(product.price))
 
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}

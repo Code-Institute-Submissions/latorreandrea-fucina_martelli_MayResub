@@ -36,12 +36,20 @@ Products
             {% for item in cart_items %}
             <tr class="align-middle">
                 <td>
-                    <p class="my-0"><strong>{{ item.product.name }} in {{ item.material}} </strong></p>
+                    <p class="my-0"><strong>{{ item.product.name }} in {{ item.material }} </strong></p>
                     <img class="img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 </td>
+                {% if item.material == "steel" %}
                 <td>
                     <p class="my-0"><strong>{{ item.product.price }}</strong><i class="fas fa-euro-sign"></i></p>
                 </td>
+                {% elif item.material == "titanium" %}
+                <td>
+                    <p class="my-0"><strong>{{ item.product.price }}<i class="fas fa-euro-sign"></i>+200<i
+                                class="fas fa-euro-sign"></i> cad.</strong>
+                    </p>
+                </td>
+                {% endif %}
                 <td>
                     <div class="quantity-form col-sm w-50">
                         <form method="POST" action="{% url 'amend_cart' id=item.product.id material=item.material %}">

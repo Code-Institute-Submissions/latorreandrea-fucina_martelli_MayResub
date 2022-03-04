@@ -21,7 +21,7 @@ def add_to_cart(request, id):
     data['quantity'] = quantity
 
     element_to_add = False
-    if len(cart)>0:
+    if len(cart)>0: 
         for k,v in cart.items():
             if data['product'] == v['product'] and data['material'] == v['material']:
                 tot = quantity + v['quantity']
