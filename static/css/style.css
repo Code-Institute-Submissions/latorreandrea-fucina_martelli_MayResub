@@ -23,7 +23,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: fit-content;
 }
 
 a,
@@ -264,6 +264,8 @@ h4.footer {
     backdrop-filter: blur(5px);
     border-radius: 15px;
     color: antiquewhite;
+
+    margin-top: 1rem;
 }
 
 /*-------------Toasts-------------*/
@@ -275,6 +277,31 @@ h4.footer {
     max-width: 10em;
     color: #000;
 }
+
+/*------------checkout---------------*/
+
+.checkout-form {
+    text-align: center;
+}
+
+.checkout-form input {
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.form-check {
+    padding: 3rem;
+}
+
+
+.resume {
+    height: fit-content;
+    padding-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-left: auto;
+}
+
 
 
 /*------------Media Queries--------*/

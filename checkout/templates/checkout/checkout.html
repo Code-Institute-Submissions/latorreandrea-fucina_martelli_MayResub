@@ -8,54 +8,59 @@ Checkout
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <hr>
-            <h1>Shipping Details</h1>
-            <hr>
-            <p> Please fill out the form below to complete your order </p>
-            <p> register or login for a faster checkout </p>
-            <form action="{% url 'checkout' %}" method="POST" id="payment">
+
+        <div class="col-lg-8 float-lg-left">
+            <div class="row table-glass">
+                <div class="col-12">
+                    <hr>
+                    <h1>Shipping Details</h1>
+                    <hr>
+                    <p> Please fill out the form below to complete your order </p>
+                    <p> register or login for a faster checkout </p>
+                </div>
+            </div>
+            <form class="checkout-form table-glass" action="{% url 'checkout' %}" method="POST" id="payment">
                 {% csrf_token %}
                 <fieldset>
-                    <legend> Details </legend>
-                    {{ order_form.full_name | as_crispy_field }}
-                    {{ order_form.email_address | as_crispy_field }}
-                    {{ order_form.phone_number | as_crispy_field }}
-                    {{ order_form.town_or_city | as_crispy_field }}
-                    {{ order_form.street_address1 | as_crispy_field }}
-                    {{ order_form.street_address2 | as_crispy_field }}
-                    {{ order_form.country | as_crispy_field }}
-                    {{ order_form.county | as_crispy_field }}
-                    {{ order_form.postcode | as_crispy_field }}
+                    <div class=" row">
+                        <legend> Details </legend>
+                        <div class="col-md-6">
+                            {{ order_form.full_name | as_crispy_field }}
+                            {{ order_form.email_address | as_crispy_field }}
+                            {{ order_form.phone_number | as_crispy_field }}
+                            {{ order_form.town_or_city | as_crispy_field }}
+                            {{ order_form.street_address1 | as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ order_form.street_address2 | as_crispy_field }}
+                            {{ order_form.country | as_crispy_field }}
+                            {{ order_form.county | as_crispy_field }}
+                            {{ order_form.postcode | as_crispy_field }}
+                        </div>
+                    </div>
+
 
                     <div class="form-check">
                         {% if user.is_authenticated %}
 
-                        <label class="form-check-label" for="save-info"> Save this info to your profile</label>
+                        <label class="form-check-label" for="save-info"> Save this info to your profile for a faster
+                            checkout</label>
                         <input class="form-check-input" type="checkbox" id="save-info">
 
                         {% else %}
 
-                        <label class="form-check-label" for="save-info"> or log in
-                            <a href="{% url 'account_signup' %}">Create an account</a>
+                        <label class="form-check-label" for="save-info">
+                            <a class="btn btn-primary px-3" href="{% url 'account_signup' %}">Create an account</a>
                             or
-                            <a href="{% url 'account_login' %}">LogIn</a>
+                            <a class="btn btn-primary px-3" href="{% url 'account_login' %}">LogIn</a>
+                            for a faster checkout
                         </label>
                         {% endif %}
                     </div>
 
                 </fieldset>
 
-                <div class="col-12">
-                    <hr>
-                    <h2> your order: </h2>
-                    <hr>
-                    {% for item in cart_items%}
-                    <div class="row">
-                        {{item.quantity}} X {{ item.product.name }} in {{ item.material }}
-                    </div>
-                    {% endfor %}
-                </div>
+
 
                 <div class="row">
                     <div class="col-12">
@@ -69,13 +74,31 @@ Checkout
                             <div id="card-payment"></div>
                         </fieldset>
                     </div>
-                </div>
-                <div class="submit-button submit-payment">
-                    <a class="btn" href="">Complete Payment</a>
+
+                    <div class="submit-button submit-payment">
+                        <a class="btn bg-primary" href="">Complete Payment</a>
+                    </div>
                 </div>
             </form>
+        </div>
 
+        <div class="col-lg-3 table-glass float-lg-right resume">
+            <div class="row center">
+                <div class="col-12 ">
+                    <hr>
+                    <h2> your order: </h2>
+                    <p>{{ total }} <i class="fas fa-euro-sign"></i> shipping included </p>
 
+                    <hr>
+                </div>
+
+                {% for item in cart_items%}
+                <div class="col-12">
+                    {{item.quantity}} X {{ item.product.name }} in {{ item.material }}
+                </div>
+
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

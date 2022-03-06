@@ -41,12 +41,12 @@ Products
                 </td>
                 {% if item.material == "steel" %}
                 <td>
-                    <p class="my-0"><strong>{{ item.product.price }}</strong><i class="fas fa-euro-sign"></i></p>
+                    <p class="my-0"><strong>{{ item.product.price }} each</strong><i class="fas fa-euro-sign"></i></p>
                 </td>
                 {% elif item.material == "titanium" %}
                 <td>
                     <p class="my-0"><strong>{{ item.product.price }}<i class="fas fa-euro-sign"></i>+200<i
-                                class="fas fa-euro-sign"></i> cad.</strong>
+                                class="fas fa-euro-sign"></i>each</strong>
                     </p>
                 </td>
                 {% endif %}
@@ -93,7 +93,7 @@ Products
             <div class="col-md-4 col-sm-12">
 
 
-                <table class="table table-glass">
+                <table class="table table-glass  center">
 
                     <thead>
                         <tr>
@@ -107,8 +107,11 @@ Products
                         <td> <span class=" float-right" id="total">{{ total }}
                                 <i class="fas fa-euro-sign"></i></span>
                         </td>
+                    </tr>
+                    <tr>
                         <td>
-                            <button class="btn btn-primary px-3" href="">Check Out!</button>
+                            <button class="btn btn-primary px-3"><a href="{% url 'checkout' %}">CHECKOUT
+                                    ></a></button>
                         </td>
                     </tr>
                 </table>
@@ -139,6 +142,6 @@ Products
 
 
     {% endif %}
-</div>
+
 </div>
 {% endblock %}
