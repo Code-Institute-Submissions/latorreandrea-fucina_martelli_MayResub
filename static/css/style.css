@@ -302,7 +302,9 @@ h4.footer {
     margin-left: auto;
 }
 
-
+input::placeholder {
+    color: #464849;
+}
 
 /*------------Media Queries--------*/
 
