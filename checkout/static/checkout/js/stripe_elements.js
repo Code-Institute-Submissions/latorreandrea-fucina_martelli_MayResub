@@ -1,18 +1,19 @@
 var str_stripe_public_key = document.getElementById("id_stripe_public_key").innerHTML;
 var stripe_public_key = str_stripe_public_key.slice(1, -1);
 
-var str_client_secret = document.getElementById("client_secret").innerHTML;
-var client_secret = str_client_secret(1, -1);
+var str_client_secret = document.getElementById("id_client_secret").innerHTML;
+var client_secret = str_client_secret.slice(1, -1);
 
 var stripe = Stripe(stripe_public_key);
 
 var elements = stripe.elements();
-var card = elements.create('card');
+
 
 var style = {
     base: {
         color: '#000',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        background: 'antiquewhite',
+        fontFamily: '"Rubik", sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
