@@ -19,7 +19,6 @@ def cart_contents(request):
     if len(cart)>0:
         for i in cart:
             if cart[i]['material'] == 'steel':
-
                 product = get_object_or_404(Product, pk=int(cart[str(i)]['product']))
                 total += cart[i]['quantity'] * product.price
                 product_count += cart[i]['quantity']
