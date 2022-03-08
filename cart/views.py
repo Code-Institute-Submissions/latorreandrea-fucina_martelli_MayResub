@@ -37,7 +37,7 @@ def add_to_cart(request, id):
     if element_to_add:
         cart[len(cart)+1] = data
 
-    print(cart)
+    
 
     request.session['cart'] = cart
     redirect_url = request.POST.get('redirect_url')  # taked in the product detail page

@@ -1,5 +1,5 @@
 import uuid
-
+from decimal import Decimal
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
@@ -11,7 +11,14 @@ ORDER_STATUS = (
     ('Delivered', 'Delivered'),
 )
 
+MATERIAL = (
+    ('steel', 'steel'),
+    ('titanium', 'titanium')
+)
+
 # Create your models here.
+
+
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -27,14 +34,22 @@ class Order(models.Model):
     date = models.DateField(auto_now_add=True)
     order_status = models.CharField(
         choices=ORDER_STATUS, max_length=50, default='Order Received', blank=True)
-    total = models.DecimalField(
-        blank=False, default=0, max_digits=4, decimal_places=2)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    
+    
 
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
+   
+    def update_total(self):
+        """
+        Update grand total
+        """
+        self.order_total = self.order_total
+        self.save()
 
     
     def save(self, *args, **kwargs):
@@ -54,7 +69,9 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=False, related_name='lineitems')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=False)
     quantity = models.IntegerField(blank=False)
-    material = models.CharField(max_length=50)
+    material = models.CharField(choices=MATERIAL, max_length=50)
+    lineitem_total = models.DecimalField(
+        blank=False, default=0, max_digits=4, decimal_places=2)
     
 
     def save(self, *args, **kwargs):

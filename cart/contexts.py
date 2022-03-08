@@ -30,7 +30,7 @@ def cart_contents(request):
                 total += cart[i]['quantity'] * (product.price + 200)
                 product_count += cart[i]['quantity']
                 cart_items.append({'product': product, 'quantity': cart[i]['quantity'] ,'product': product, 'material':cart[i]['material']})
-                print(product.price + 200)
-                print(type(product.price))
+                
+                
 
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
