@@ -39,9 +39,12 @@ def checkout(request):
                     quantity=cart[i]['quantity'],
                     material=cart[i]['material'],                    
                 )
+                print(order_line_item)
                 order_line_item.save()
-                
-
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('success', args=[order.order_number]))
+        else:
+            messages.error(request, 'errors in the form')
 
     else:
         cart = request.session.get('cart', {})
@@ -50,18 +53,18 @@ def checkout(request):
             messages.error(request, "there's nothing in your cart")   
             return redirect(reverse('products'))
         
-    current_cart = cart_contents(request)
-    total = current_cart['total']
+        current_cart = cart_contents(request)
+        total = current_cart['total']
 
-    # create payment intent 2/2
-    stripe_total = round(total*100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-    amount=stripe_total,
-    currency=settings.STRIPE_CURRENCY,
-    )
+        # create payment intent 2/2
+        stripe_total = round(total*100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+        )
         
-    order_form = OrderForm()
+        order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -70,3 +73,22 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
+
+def success(request, order_number):
+    '''.
+    View to render success page for payments
+    '''
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
+
+    if 'cart' in request.session:
+        del request.session['cart']
+
+    template = 'checkout/success.html'
+    context = {
+        'order' : order,
+    }
+
+    return render(request, template)

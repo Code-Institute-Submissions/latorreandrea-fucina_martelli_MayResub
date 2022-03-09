@@ -36,6 +36,7 @@ var form = document.getElementById('payment');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    //prevent multiple submission
     card.update({
         'disabled': true
     });
