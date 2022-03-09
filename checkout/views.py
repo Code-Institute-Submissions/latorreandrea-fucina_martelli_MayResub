@@ -39,7 +39,7 @@ def checkout(request):
                     quantity=cart[i]['quantity'],
                     material=cart[i]['material'],                    
                 )
-                print(order_line_item)
+                
                 order_line_item.save()
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('success', args=[order.order_number]))

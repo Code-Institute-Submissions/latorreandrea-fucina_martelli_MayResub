@@ -50,7 +50,6 @@ class Order(models.Model):
         """
         self.order_total = self.order_total
         self.save()
-
     
     def save(self, *args, **kwargs):
         """
@@ -71,23 +70,22 @@ class OrderLineItem(models.Model):
     quantity = models.IntegerField(blank=False)
     material = models.CharField(choices=MATERIAL, max_length=50)
     lineitem_total = models.DecimalField(
-        blank=False, default=0, max_digits=4, decimal_places=2)
-    
-'''
+        blank=False, default=0, max_digits=10, decimal_places=2)
+
     def save(self, *args, **kwargs):
         """
         Save method to set lineitem total
         """
         if self.material == "steel":
 
-            self.lineitem_total = int(self.product.price) * int(self.quantity)
+            self.lineitem_total = self.product.price * self.quantity
             super().save(*args, **kwargs)
 
-        else :
-            self.lineitem_total = (int(self.product.price) + 200) * int(self.quantity)
+        else:
+            self.lineitem_total = (self.product.price + 200) * self.quantity
             super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.product.name} on order {self.order.order_number}'
-'''
+
     
