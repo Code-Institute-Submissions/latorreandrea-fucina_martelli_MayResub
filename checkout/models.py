@@ -49,7 +49,7 @@ class Order(models.Model):
         Update grand total
         """
         
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0 #or 0 prevent error for orders with no total
         self.save()
         
     

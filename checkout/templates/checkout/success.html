@@ -15,24 +15,26 @@ Success
     <div class="row">
 
         <div class="col-lg-8 float-lg-left">
-            <div class="row table-glass">
+            <div class="row table-glass text-center">
                 <div class="col-12">
                     <hr>
                     <h1>Thank You!</h1>
-                    <hr>
                     <p> your order information:</p>
 
                 </div>
                 <div class="col-12 ">
                     <hr>
-                    <h2> your order: </h2>
-                    <p># <i class="fas fa-euro-sign"></i> shipping included </p>
+                    <h2> Your Order: </h2>
                     <hr>
+                    <p>Order Number: {{ order.order_number }}</p>
+                    <p>Order Total: {{ order.order_total}}<i class="fas fa-euro-sign"></i> shipping included </p>
+
                 </div>
                 <div class="col-12 ">
                     <hr>
-                    <h2> delivered to: </h2>
-                    <p> </p>
+                    <h2> Delivered to: </h2>
+                    <p> {{ order.full_name}} in {{ order.street_address1 }}</p>
+                    <p> {{ order.town_or_city}} {{ order.postcode }}, {{ order.county }}, {{ order.country }}</p>
                     <hr>
                 </div>
                 <div class="col-12">
