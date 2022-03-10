@@ -59,6 +59,13 @@ Products
                                     <span>
                                         <a class="btn btn-primary px-3" href="{% url 'products' %}">Back to
                                             shop</a>
+                                        {% if product_count > 0 %}
+                                        <p>or</p>
+                                        <a class="btn btn-primary px-3" href="{% url 'view_cart' %}" alt="Cart">Go to
+                                            cart<i class="fas fa-shopping-basket"></i>
+                                        </a>
+                                        {% endif %}
+
                                     </span>
                                 </div>
                             </div>

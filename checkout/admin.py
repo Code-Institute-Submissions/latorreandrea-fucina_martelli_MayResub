@@ -19,5 +19,6 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('order_number', 'full_name', 'date', 'order_total')
 
     ordering = ('-date',)
+    search_fields = ['order_number'] #admin can found easly an order
 
 admin.site.register(Order, OrderAdmin)
