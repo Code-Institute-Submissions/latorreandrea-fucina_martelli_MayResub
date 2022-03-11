@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from checkout.webhook_handler import StripeWH_Handler
+import stripe
 
 
 @require_POST
@@ -10,32 +11,36 @@ from checkout.webhook_handler import StripeWH_Handler
 def webhook(request):
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
-    payload = request.body
     event = None
-
+    payload = request.data
+    sig_header = request.headers['STRIPE_SIGNATURE']
 
     try:
-        event = stripe.Event.construct_from(
-        json.loads(payload), stripe.api_key
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, wh_secret
         )
     except ValueError as e:
         # Invalid payload
+        messages.error(request, f"There was an error during the payment")
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        messages.error(request, f"There was an error during the payment")
         return HttpResponse(status=400)
 
-    # Set up webhook
-    handler = StripeWH_Handler(request)
+    # Handle the event
+    if event.type == 'payment_intent.succeeded':
+        payment_intent = event.data.object # contains a stripe.PaymentIntent
+        print('payment succeded')
+    # Then define and call a method to handle the successful payment intent.
+    # handle_payment_intent_succeeded(payment_intent)
+    elif event.type == 'payment_method.attached':
+        payment_method = event.data.object # contains a stripe.PaymentMethod
+        print('payment failed')
+    # Then define and call a method to handle the successful attachment of a PaymentMethod.
+    # handle_payment_method_attached(payment_method)
+  # ... handle other event types
+    else:
+        print('Unhandled event type {}'.format(event.type))
 
-    # Map webhook events to relevant handler functions
-
-    event_map = {
-        "payment_intent_succeeded": handler.handle_payment_intent_succeeded,
-        "payment_intent_failed": handler.handle_payment_intent_failed,
-    }
-
-    # Get the webhook type from Stripe
-    event_type = event['type']
-    event_handler = event_map.get(event_type, handler.handle_event)
-
-    # call the event handler with the event
-    response = event_handler(event)
-    return response
+    return HttpResponse(status=200)
