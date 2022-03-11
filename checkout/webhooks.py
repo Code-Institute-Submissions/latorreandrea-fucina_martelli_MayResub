@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from checkout.webhook_handler import StripeWH_Handler
+from django.contrib import messages
 import stripe
 
 
@@ -27,20 +28,22 @@ def webhook(request):
         # Invalid signature
         messages.error(request, f"There was an error during the payment")
         return HttpResponse(status=400)
-
+    
+    print("eccoci")
+    return HttpResponse(status=200)
+'''
     # Handle the event
     if event.type == 'payment_intent.succeeded':
         payment_intent = event.data.object # contains a stripe.PaymentIntent
         print('payment succeded')
     # Then define and call a method to handle the successful payment intent.
     # handle_payment_intent_succeeded(payment_intent)
-    elif event.type == 'payment_method.attached':
+    elif event.type == 'payment_intent_failed':
         payment_method = event.data.object # contains a stripe.PaymentMethod
         print('payment failed')
-    # Then define and call a method to handle the successful attachment of a PaymentMethod.
-    # handle_payment_method_attached(payment_method)
-  # ... handle other event types
+      # ... handle other event types
     else:
         print('Unhandled event type {}'.format(event.type))
 
     return HttpResponse(status=200)
+    '''

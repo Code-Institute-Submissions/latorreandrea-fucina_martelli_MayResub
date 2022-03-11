@@ -38,10 +38,11 @@ def add_to_cart(request, id):
         cart[len(cart)+1] = data
 
     
-
+    
     request.session['cart'] = cart
+    product = Product.objects.get(pk=id)
     redirect_url = request.POST.get('redirect_url')  # taked in the product detail page
-
+    messages.success(request, f"added {product} to your bag")
     return redirect(redirect_url)
 
 

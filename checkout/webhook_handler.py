@@ -33,4 +33,4 @@ class StripeWH_Handler:
             content=f'webhook received: {event["tipe"]}',
             status=200
         )
-    print("eccoci")
+    
