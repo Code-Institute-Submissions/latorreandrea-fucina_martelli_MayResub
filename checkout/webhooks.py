@@ -27,15 +27,13 @@ def webhook(request):
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
         messages.error(request, f"There was an error during the payment")
-        return HttpResponse(status=400)
-    
-    print("eccoci")
-    return HttpResponse(status=200)
-'''
+        return HttpResponse(status=400)   
+
     # Handle the event
     if event.type == 'payment_intent.succeeded':
         payment_intent = event.data.object # contains a stripe.PaymentIntent
         print('payment succeded')
+        print(payment_intent)
     # Then define and call a method to handle the successful payment intent.
     # handle_payment_intent_succeeded(payment_intent)
     elif event.type == 'payment_intent_failed':
@@ -46,4 +44,3 @@ def webhook(request):
         print('Unhandled event type {}'.format(event.type))
 
     return HttpResponse(status=200)
-    '''
