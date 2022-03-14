@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+MyAccount
+{% endblock %}
+
+{% block content %}
+<div class="conteiner">
+    <div class="row center table-glass">
+        {% if user.is_authenticated %}
+
+        <h1> Welcome Back {{ user.username }}!</h1>
+
+        <ul class="list-inline">
+            <li> <a class="btn btn-primary px-3 list-inline-item" href="#">Order History</a> </li>
+            <li> <a class="btn btn-primary px-3 list-inline-item" href="#">Add shipping information</a> </li>
+
+        </ul>
+
+
+        {% else %}
+        <div class="col-12">
+            <p>
+                You are not registered. To access this function:
+            </p>
+            <p>
+                <a class="btn btn-primary px-3" href="{% url 'account_signup' %}">Create an account</a>
+                or
+                <a class="btn btn-primary px-3" href="{% url 'account_login' %}">LogIn</a>
+                if you are registered
+            </p>
+
+
+        </div>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

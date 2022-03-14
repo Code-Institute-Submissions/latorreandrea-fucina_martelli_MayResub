@@ -34,7 +34,7 @@ class Order(models.Model):
     date = models.DateField(auto_now_add=True)
     order_status = models.CharField(
         choices=ORDER_STATUS, max_length=50, default='Order Received', blank=True)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)    
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)   
     
 
     def _generate_order_number(self):
