@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 # Create your models here.
+
 
 class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -14,4 +14,5 @@ class Account(models.Model):
     street_address1 = models.CharField(max_length=40, blank=True, null=True)
     street_address2 = models.CharField(max_length=40, blank=True, null=True)
     county = models.CharField(max_length=40, blank=True, null=True)
-    
+
+

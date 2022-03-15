@@ -48,9 +48,9 @@ Checkout
                     <div class="form-check">
                         {% if user.is_authenticated %}
 
-                        <label class="form-check-label" for="save-info"> Save this info to your profile for a faster
+                        <label class="btn btn-primary" for="save-info"> Save this info to your profile for a faster
                             checkout</label>
-                        <input class="form-check-input" type="checkbox" id="save-info">
+                        <input class="form-check-input" type="checkbox" id="save-info" name="save-info">
 
                         {% else %}
 

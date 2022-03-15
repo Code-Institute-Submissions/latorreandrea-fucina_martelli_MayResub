@@ -10,16 +10,26 @@ MyAccount order history
     <div class="row center table-glass">
         {% if user.is_authenticated %}
 
-        <h1> Welcome Back {{ user.username }}!</h1>
+        <h1> {{ user.username }} Order history</h1>
 
-        {% for order in user_order %}
-        <tr>
-            <td>{{order.order_number}}</td>
-            <td>{{order.order_total}}</td>
-            <td>{{order.date}}</td>
-        </tr>
-        {% endfor%}
-
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">OrderNumber</th>
+                    <th scope="col">TotalPrice</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            {% for order in user_order %}
+            <tbody>
+                <tr>
+                    <td>{{order.order_number}}</td>
+                    <td>{{order.order_total}}</td>
+                    <td>{{order.date}}</td>
+                </tr>
+            </tbody>
+            {% endfor%}
+        </table>
 
         {% else %}
         <div class="col-12">

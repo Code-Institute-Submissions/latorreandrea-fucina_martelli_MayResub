@@ -13,7 +13,8 @@ MyAccount
         <h1> Welcome Back {{ user.username }}!</h1>
 
         <ul class="list-inline">
-            <li> <a class="btn btn-primary px-3 list-inline-item" href="#">Order History</a> </li>
+            <li> <a class="btn btn-primary px-3 list-inline-item" href="{% url 'order_history' %}">Order History</a>
+            </li>
             <li> <a class="btn btn-primary px-3 list-inline-item" href="#">Add shipping information</a> </li>
 
         </ul>

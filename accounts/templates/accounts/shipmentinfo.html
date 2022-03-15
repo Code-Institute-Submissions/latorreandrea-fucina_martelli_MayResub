@@ -10,13 +10,9 @@ MyAccount shipment info
     <div class="row center table-glass">
         {% if user.is_authenticated %}
 
-        <h1> Welcome Back {{ user.username }}!</h1>
+        <h1> Saved shipment information {{ user.username }}!</h1>
 
-        <ul>
-            <li> <a class="btn btn-primary px-3" href="#">Order History</a> </li>
-            <li> <a class="btn btn-primary px-3" href="#">Add shipping information</a> </li>
 
-        </ul>
 
 
         {% else %}
