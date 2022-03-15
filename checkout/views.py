@@ -61,7 +61,7 @@ def checkout(request):
                     order=order,                 
                     product=product,
                     quantity=cart[i]['quantity'],
-                    material=cart[i]['material'],                    
+                    material=cart[i]['material'],
                 )                
                 order_line_item.save()
             if not account:   
