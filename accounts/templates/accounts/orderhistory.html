@@ -6,29 +6,31 @@ MyAccount order history
 {% endblock %}
 
 {% block content %}
-<div class="conteiner">
+<div class="container">
     <div class="row center table-glass">
         {% if user.is_authenticated %}
 
-        <h1> {{ user.username }} Order history</h1>
+        <h1> Your order history </h1>
 
-        <table class="table text-center">
+        <table class="table table-sm">
             <thead>
                 <tr>
-                    <th scope="col">OrderNumber</th>
-                    <th scope="col">TotalPrice</th>
-                    <th scope="col">Date</th>
+                    <th scope="col-3">Order Code</th>
+                    <th scope="col-3">Total</th>
+                    <th scope="col-3">Date</th>
+
                 </tr>
             </thead>
-            {% for order in user_order %}
-            <tbody>
-                <tr>
-                    <td>{{order.order_number}}</td>
-                    <td>{{order.order_total}}</td>
-                    <td>{{order.date}}</td>
-                </tr>
-            </tbody>
+
+            {% for order in accounts_orders_list %}
+
+            <tr>
+                <td>{{order.order_number}}</td>
+                <td>{{order.order_total}}€ </td>
+                <td>{{order.date}}</td>
+            </tr>
             {% endfor%}
+
         </table>
 
         {% else %}

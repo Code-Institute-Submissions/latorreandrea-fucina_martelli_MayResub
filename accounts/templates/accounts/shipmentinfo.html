@@ -9,32 +9,14 @@ MyAccount shipment info
 <div class="conteiner">
     <div class="row center table-glass">
         {% if user.is_authenticated %}
-        <div class="col-12">
-            <h1> Saved shipment information {{ user.username }}!</h1>
-            <form class="checkout-form table-glass" action="#" method="POST" id="shipment">
-                {% csrf_token %}
-                <fieldset>
-                    <div class=" row">
-                        <legend> Details </legend>
-                        <div class="col-md-6">
-                            {{ order_form.full_name | as_crispy_field }}
-                            {{ order_form.email_address | as_crispy_field }}
-                            {{ order_form.phone_number | as_crispy_field }}
-                            {{ order_form.town_or_city | as_crispy_field }}
-                            {{ order_form.street_address1 | as_crispy_field }}
-                        </div>
-                        <div class="col-md-6">
-                            {{ order_form.street_address2 | as_crispy_field }}
-                            {{ order_form.country | as_crispy_field }}
-                            {{ order_form.county | as_crispy_field }}
-                            {{ order_form.postcode | as_crispy_field }}
-                        </div>
-                    </div>
 
-                </fieldset>
+        <h1> Welcome Back {{ user.username }}!</h1>
 
-            </form>
-        </div>
+        <ul>
+            <li> <a class="btn btn-primary px-3" href="#">Order History</a> </li>
+            <li> <a class="btn btn-primary px-3" href="#">Add shipping information</a> </li>
+
+        </ul>
 
 
         {% else %}

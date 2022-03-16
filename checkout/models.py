@@ -3,11 +3,8 @@ from decimal import Decimal
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
-from products.models import Product
 from accounts.models import Account
-from django.contrib.auth.models import User
-
+from products.models import Product
 
 ORDER_STATUS = (
     ('Order Received', 'Order Received'),
@@ -22,8 +19,10 @@ MATERIAL = (
 # Create your models here.
 
 
+
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    account = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     email_address = models.CharField(max_length=100, blank=False, default="")
@@ -37,19 +36,20 @@ class Order(models.Model):
     order_status = models.CharField(
         choices=ORDER_STATUS, max_length=50, default='Order Received', blank=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)   
-    account = models.ForeignKey(Account, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+    
 
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
         """
-        return uuid.uuid4().hex.upper()   
+        return uuid.uuid4().hex.upper()
+   
+    def update_total(self):
         
-    def update_total(self):        
         """
         Update grand total
-        """        
+        """
+        
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0 #or 0 prevent error for orders with no total
         self.save()
         
@@ -65,7 +65,6 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
-
 
 
 class OrderLineItem(models.Model):    

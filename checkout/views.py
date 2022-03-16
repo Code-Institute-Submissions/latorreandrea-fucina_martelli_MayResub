@@ -4,9 +4,9 @@ from django.conf import settings
 from .forms import OrderForm
 from cart.contexts import cart_contents
 from .models import Order, OrderLineItem
-from django.contrib.auth.models import User
-from accounts.models import Account
 from products.models import Product
+from accounts.models import Account
+from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 import json
 import stripe
@@ -49,9 +49,6 @@ def checkout(request):
             'county': request.POST['county'],
             'postcode': request.POST['postcode'],
         }
-        user = request.user
-        user = get_object_or_404(User, username=user)
-        account = Account(user=user, **form_data)        
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()            
@@ -61,15 +58,10 @@ def checkout(request):
                     order=order,                 
                     product=product,
                     quantity=cart[i]['quantity'],
-                    material=cart[i]['material'],
+                    material=cart[i]['material'],                    
                 )                
                 order_line_item.save()
-            if not account:   
-                save_info = request.POST['save-info']
-                if save_info == "on":
-                    account.save()
-            
-
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('success', args=[order.order_number]))
         else:
             messages.error(request, 'errors in the form')
@@ -106,10 +98,19 @@ def checkout(request):
 def success(request, order_number):
     '''.
     View to render success page for payments
-    '''    
+    '''
+    
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
 
+    if request.user.is_authenticated:
+        account = Account.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.account = account
+        order.save()
+        
+        
+    messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
     if 'cart' in request.session:
         del request.session['cart']
 

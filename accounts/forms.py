@@ -1,13 +1,14 @@
 class AccountForm(forms.ModelForm):
     class Meta:
         model = Account
+        exclude = ('user',)
         fields = (
             'full_name', 'email_address', 'phone_number', 'town_or_city',
             'street_address1', 'street_address2',
             'country', 'county', 'postcode')
     
     def __int__(self, *args, **kwargs):
-        '''add placeholders, set autofocus for form order'''
+        '''add placeholders, '''
         super(). __int__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name', 

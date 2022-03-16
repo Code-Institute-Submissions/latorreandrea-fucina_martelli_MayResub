@@ -96,7 +96,7 @@
 
             {% if user.is_authenticated %}
             <span>
-                <a class="nav-link" href="{% url 'accounts' %}">My Account</a>
+                <a class="nav-link" href="{% url 'accounts'%}">My Account</a>
             </span>
             <span>
 
@@ -105,9 +105,10 @@
             </span>
             {% else %}
             <span>
-
                 <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
-
+            </span>
+            <span>
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
             </span>
             {% endif %}
             <span>
