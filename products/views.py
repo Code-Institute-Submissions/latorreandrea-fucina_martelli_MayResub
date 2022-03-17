@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 from .models import Product, Category
 # Create your views here.
@@ -41,3 +41,21 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+def product_review(request, product_id):
+    """ A view to show detail of selected product"""
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_review.html', context)
+
+
+def add_review(request, product_id):
+    """
+    Take review and create a rating for a product
+    """
+    print(request.POST.get('review'))
+    redirect_url = request.POST.get('redirect_url')
+    return redirect(redirect_url)
