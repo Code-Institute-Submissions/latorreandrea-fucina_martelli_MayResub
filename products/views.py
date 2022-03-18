@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, ProductReview
+from django.contrib.auth.models import User
+from django.contrib import messages
 # Create your views here.
 
 
@@ -54,8 +56,15 @@ def product_review(request, product_id):
 
 def add_review(request, product_id):
     """
-    Take review and create a rating for a product
+    View to add review
     """
-    print(request.POST.get('review'))
-    redirect_url = request.POST.get('redirect_url')
-    return redirect(redirect_url)
+    product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            stars = request.POST.get('stars')
+            content = request.POST.get('content')
+
+            review = ProductReview.objects.create(product=product, user=request.user, stars=stars, content=content)
+            
+            messages.success(request, f"Your review of {product.name} has been added")
+            return redirect('product_detail', product_id=product_id)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, ProductReview
 
 
 # customizing admin info displayed for products
@@ -24,3 +24,4 @@ class CategoryAdmin(admin.ModelAdmin):
 # Register models for products to keep update the catalougue from admin panel
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(ProductReview)

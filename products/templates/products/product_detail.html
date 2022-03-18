@@ -12,10 +12,10 @@ Products
             <img src="{{ product.image.url }}" class="img-fluid rounded img-detail mt-3" alt="{{ product.name }}">
             <br>
             <div class="table-glass center">
-                {% if product.rating %}
-                <p class=" mt-3"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
+                {% if product.get_rating != 0 %}
+                <p class="mt-3"><i class="fas fa-star mr-1"></i>{{ product.get_rating|floatformat:2 }}/ 5</p>
                 {% else %}
-                <p class=" mt-3">No Rating</p>
+                <p class="mt-3">No Rating</p>
                 {% endif %}
                 <a class="btn btn-primary px-3" href="{% url 'product_review' product.id %}">rate this gear!
                 </a>
@@ -86,6 +86,24 @@ Products
         </div>
 
     </div>
+    <div class="container center">
+        <div class="row text-center">
+            <div class="col-12 table-glass ">
+                <h1>Review:</h1>
+                {% for review in product.reviews.all %}
+                <p class="center">Vote:{{ review.stars }}</p>
+                <p>
+                    {{ review.content }}
+                </p>
+                {% empty %}
+                <p> There are no descriptions for this product</p>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 {% endblock %}
