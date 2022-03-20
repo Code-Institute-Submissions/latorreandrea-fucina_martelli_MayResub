@@ -3,6 +3,8 @@ from django.db.models import Q
 from .models import Product, Category, ProductReview
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.paginator import Paginator
+from accounts.models import Account
 # Create your views here.
 
 
@@ -20,8 +22,6 @@ def all_products(request):
         if 'category' in request.GET:
             category = request.GET['category']           
             products = products.filter(category__name=category)
-            
-            
 
     context = {
         'products': products,
@@ -31,20 +31,27 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-
 def product_detail(request, product_id):
-    """ A view to show detail of selected product"""
-    product = get_object_or_404(Product, pk=product_id)
+    """ A view to show detail and reviews of selected product"""
+    product = get_object_or_404(Product, pk=product_id)  
+    reviews = ProductReview.objects.filter(product=product_id)
+
+    #paginating (https://docs.djangoproject.com/en/4.0/topics/pagination/)
+    paginator = Paginator(reviews, 10) # Show 10 reviews per page.
+    page_number = request.GET.get('page')
+    page_reviews = paginator.get_page(page_number)   
+
 
     context = {
         'product': product,
+        'page_reviews': page_reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
 
 
 def product_review(request, product_id):
-    """ A view to show detail of selected product"""
+    """ A view to review the selected product """
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -63,8 +70,8 @@ def add_review(request, product_id):
         if request.method == 'POST':
             stars = request.POST.get('stars')
             content = request.POST.get('content')
-
-            review = ProductReview.objects.create(product=product, user=request.user, stars=stars, content=content)
-            
+            user = request.user
+            account = Account.objects.get(user=request.user)
+            review = ProductReview.objects.create(product=product, user=user, stars=stars, content=content, account=account)            
             messages.success(request, f"Your review of {product.name} has been added")
             return redirect('product_detail', product_id=product_id)

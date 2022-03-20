@@ -17,8 +17,19 @@ Products
                 {% else %}
                 <p class="mt-3">No Rating</p>
                 {% endif %}
+                {% if user.is_authenticated %}
                 <a class="btn btn-primary px-3" href="{% url 'product_review' product.id %}">rate this gear!
                 </a>
+                {% else %}
+                <p>
+                    <a class="btn btn-primary px-3" href="{% url 'account_signup' %}">Register
+                    </a>
+                    or
+                    <a class="btn btn-primary px-3" href="{% url 'account_login' %}">LogIn
+                    </a>
+                    to rate this product
+                </p>
+                {% endif %}
             </div>
         </div>
 
@@ -86,20 +97,45 @@ Products
         </div>
 
     </div>
-    <div class="container center">
-        <div class="row text-center">
-            <div class="col-12 table-glass ">
-                <h1>Review:</h1>
-                {% for review in product.reviews.all %}
-                <p class="center">Vote:{{ review.stars }}</p>
-                <p>
-                    {{ review.content }}
-                </p>
-                {% empty %}
-                <p> There are no descriptions for this product</p>
-                {% endfor %}
-
+    <!--Review Section-->
+    <div class="container review mt-5">
+        <div class="row table-glass">
+            <div class="col-12">
+                <h1 class="center">Review:</h1>
             </div>
+            {% for reviews in page_reviews %}
+
+            <div class="col-12 col-md-4 col-lg-3 review">
+                <p class="center">Vote:{{ reviews.stars }} <i class="fas fa-star mr-1"></i></p>
+                <p> from {{ reviews.account }}</p>
+                <blockquote class="blockquote">
+                    <p>
+                        "{{ reviews.content|truncatechars:50 }}"
+                    </p>
+                </blockquote>
+            </div>
+            {% empty %}
+            <p> There are no reviews for this product</p>
+            {% endfor %}
+        </div>
+        <!-- paginator links (https://docs.djangoproject.com/en/4.0/topics/pagination/)-->
+
+        <div class="row center table-glass paginator">
+            <span class="col-12 step-links">
+                {% if page_reviews.has_previous %}
+                <a class="btn btn-primary px-3" href="?page=1">&laquo; first</a>
+                <a class="btn btn-primary px-3" href="?page={{ page_reviews.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_reviews.number }} of {{ page_reviews.paginator.num_pages }}.
+                </span>
+
+                {% if page_reviews.has_next %}
+                <a class="btn btn-primary px-3" href="?page={{ page_reviews.next_page_number }}">next</a>
+                <a class="btn btn-primary px-3" href="?page={{ page_reviews.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
         </div>
 
     </div>

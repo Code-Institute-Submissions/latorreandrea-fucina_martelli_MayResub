@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from accounts.models import Account
 
 
 # Create your models here.
@@ -50,5 +51,6 @@ class ProductReview(models.Model):
     user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
     content = models.TextField(blank=True, null=True)
     stars = models.IntegerField()
+    account = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews')
 
     
