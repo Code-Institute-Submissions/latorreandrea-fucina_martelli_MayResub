@@ -11,6 +11,11 @@ from accounts.models import Account
 def all_products(request):
     """ A view to show products / searched products /selected category"""
     products = Product.objects.all()
+    #paginating (https://docs.djangoproject.com/en/4.0/topics/pagination/)
+    paginator = Paginator(products, 6) # Show 6 products per page.
+    page_number = request.GET.get('page')
+    products = paginator.get_page(page_number) 
+
     query = None
     category = None
 
