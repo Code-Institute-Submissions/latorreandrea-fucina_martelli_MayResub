@@ -9,8 +9,11 @@ from accounts.models import Account
 
 
 def all_products(request):
-    """ A view to show products / searched products /selected category"""
-    products = Product.objects.all()      
+    """ A view to show products / searched products /selected category""" 
+    products = Product.objects.all() 
+    paginator = Paginator(products, 6) # Show 6 products per page.
+    page_number = request.GET.get('page')
+    products = paginator.get_page(page_number)     
 
     query = None
     category = None   
@@ -30,7 +33,8 @@ def all_products(request):
             paginator = Paginator(products, 6) # Show 6 products per page.
             page_number = request.GET.get('page')
             products = paginator.get_page(page_number)
-    else :
+    else:
+        products = Product.objects.all() 
         paginator = Paginator(products, 6) # Show 6 products per page.
         page_number = request.GET.get('page')
         products = paginator.get_page(page_number)
