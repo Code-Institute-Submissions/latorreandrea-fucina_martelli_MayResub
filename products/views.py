@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
 from .models import Product, Category, ProductReview
 from django.contrib.auth.models import User
@@ -11,11 +11,7 @@ from .forms import ProductForm
 
 def all_products(request):
     """ A view to show products / searched products /selected category""" 
-    products = Product.objects.all() 
-    paginator = Paginator(products, 6) # Show 6 products per page.
-    page_number = request.GET.get('page')
-    products = paginator.get_page(page_number)     
-
+    products = Product.objects.all()
     query = None
     category = None   
 
@@ -23,27 +19,20 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
-            paginator = Paginator(products, 6) # Show 6 products per page.
-            page_number = request.GET.get('page')
-            products = paginator.get_page(page_number)
+            products = products.filter(queries)                       
             
         if 'category' in request.GET:
             category = request.GET['category']           
-            products = products.filter(category__name=category)
-            paginator = Paginator(products, 6) # Show 6 products per page.
-            page_number = request.GET.get('page')
-            products = paginator.get_page(page_number)
-    else:
-        products = Product.objects.all() 
-        paginator = Paginator(products, 6) # Show 6 products per page.
-        page_number = request.GET.get('page')
-        products = paginator.get_page(page_number)
+            products = products.filter(category__name=category)           
+
+    paginator = Paginator(products, 6) # Show 6 products per page.
+    page_number = request.GET.get('page')
+    products = paginator.get_page(page_number)
 
     context = {
         'products': products,
         'search': query,
-        'category_selected': category,
+        
     }
     return render(request, 'products/products.html', context)
 
@@ -93,10 +82,21 @@ def add_review(request, product_id):
             messages.success(request, f"Your review of {product.name} has been added")
             return redirect('product_detail', product_id=product_id)
 
+
 def add_product(request):
     """
     add product in store
     """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product added in the store')
+            return redirect(reverse('add_product'))
+        else:
+            message.error(request, 'check that you have filled in the form correctly')
+
+
 
     form = ProductForm()
     template = 'products/add_product.html'
