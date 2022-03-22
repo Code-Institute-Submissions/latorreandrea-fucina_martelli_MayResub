@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.paginator import Paginator
 from accounts.models import Account
+from .forms import ProductForm
 # Create your views here.
 
 
@@ -91,3 +92,15 @@ def add_review(request, product_id):
             review = ProductReview.objects.create(product=product, user=user, stars=stars, content=content, account=account)            
             messages.success(request, f"Your review of {product.name} has been added")
             return redirect('product_detail', product_id=product_id)
+
+def add_product(request):
+    """
+    add product in store
+    """
+
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
