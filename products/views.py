@@ -45,7 +45,7 @@ def product_detail(request, product_id):
     #paginating (https://docs.djangoproject.com/en/4.0/topics/pagination/)
     paginator = Paginator(reviews, 10) # Show 10 reviews per page.
     page_number = request.GET.get('page')
-    page_reviews = paginator.get_page(page_number)   
+    page_reviews = paginator.get_page(page_number)
 
 
     context = {
@@ -94,9 +94,7 @@ def add_product(request):
             messages.success(request, 'Product added in the store')
             return redirect(reverse('add_product'))
         else:
-            message.error(request, 'check that you have filled in the form correctly')
-
-
+            messages.error(request, 'check that you have filled in the form correctly')
 
     form = ProductForm()
     template = 'products/add_product.html'
@@ -104,3 +102,35 @@ def add_product(request):
         'form': form,
     }
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """delete selected product"""
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted')
+    return redirect(reverse('products'))
+    
+
+def edit_product(request, product_id):
+    """edit selected product"""
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'you have edit {product.name}')
+            return redirect('product_detail', product_id=product_id)
+        else:
+            messages.error(request, 'an error was encountered')
+    else:
+        form = ProductForm(instance=product)      
+    
+    template = 'products/edit_product.html'
+    context = {
+        'product': product,
+        'form': form,
+    }
+    return render(request, template, context)
+
+

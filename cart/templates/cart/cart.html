@@ -6,9 +6,11 @@ Cart
 {% endblock %}
 
 {% block content %}
+
 <div class="container-md  container-cart justify-content-center">
+    {% if product_count > 0 %}
     <div class="row">
-        {% if product_count > 0 %}
+
         <div class="col-12">
             <hr>
             <h1>
@@ -41,7 +43,8 @@ Cart
                 </td>
                 {% if item.material == "steel" %}
                 <td>
-                    <p class="my-0"><strong>{{ item.product.price }} each</strong><i class="fas fa-euro-sign"></i></p>
+                    <p class="my-0"><strong>{{ item.product.price }} each</strong><i class="fas fa-euro-sign"></i>
+                    </p>
                 </td>
                 {% elif item.material == "titanium" %}
                 <td>
@@ -115,30 +118,31 @@ Cart
                         </td>
                     </tr>
                 </table>
+            </div>
         </table>
     </div>
 
 
     {%else%}
-    <div class="row">
-        <div class="cart-empty">
-            <div class="col-12">
-                <hr>
-                <h1>Your cart is empty</h1>
-                <hr>
-                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
-                        shop</a></button>
 
-            </div>
-            <div class="col-12">
-                <p>Or explore the world of buhurt</p>
-                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Home</a></button>
-                <button class="btn btn-primary px-3"><a href="{% url 'products' %}">About Us</a></button>
+    <div class="row cart-empty">
+        <div class="col-12">
+            <hr>
+            <h1>Your cart is empty</h1>
+            <hr>
+            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Back to
+                    shop</a></button>
 
-            </div>
         </div>
+        <div class="col-12">
+            <p>Or explore the world of buhurt</p>
+            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">Home</a></button>
+            <button class="btn btn-primary px-3"><a href="{% url 'products' %}">About Us</a></button>
 
+        </div>
     </div>
+
+
 
 
     {% endif %}

@@ -30,6 +30,19 @@ Products
                     to rate this product
                 </p>
                 {% endif %}
+                {% if request.user.is_superuser %}
+
+                <p>
+                    <a class="btn btn-primary px-3" href="{% url 'edit_product' product.id %}">Edit
+                    </a>
+                    or
+                    <a class="btn btn-outline-danger " href="{% url 'delete_product' product.id %}">Delete
+                    </a>
+
+                </p>
+
+                {% endif %}
+
             </div>
         </div>
 
