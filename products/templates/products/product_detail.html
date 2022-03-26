@@ -9,7 +9,20 @@ Products
 <div class="container justify-content-center">
     <div class="row">
         <div class="inner-card-detail text-center col-12 col-md-6">
-            <img src="{{ product.image.url }}" class="img-fluid rounded img-detail mt-3" alt="{{ product.name }}">
+            {% if product.image %}
+
+            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+            <div class=" justify-content-between align-items-center text-center mt-3 px-2">
+                <h3 class="font-weight-bold">{{ product.name }}</h3>
+            </div>
+            {% else %}
+            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ product.name }}">
+
+            <div class=" justify-content-between align-items-center text-center mt-3 px-2">
+                <h3 class="font-weight-bold">{{ product.name }}</h3>
+            </div>
+            {% endif %}
+
             <br>
             <div class="table-glass center">
                 {% if product.get_rating != 0 %}
