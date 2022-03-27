@@ -1,4 +1,14 @@
 {% extends "base.html" %}
-<div class=".container-sm container-accounts">
-    <hr>
+<!-- create a block to make the site style even in the allout forms -->
+{% block content %}
+<div class="container">
+    <div class="row center">
+        <div class="col-12 table-glass allauth">
+            {% block inner_content %}
+            {% endblock %}
+
+        </div>
+    </div>
 </div>
+
+{% endblock %}
