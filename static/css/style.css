@@ -129,12 +129,24 @@ label.badge.badge-warning {
     padding: 10px;
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+    background: #051D03;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+}
 
 .carousel-item img {
     border-radius: 5px;
     max-height: 500px;
     max-width: 500px;
+}
 
+/* ----------- homepage content */
+.embed-responsive-item {
+    margin-top: 5rem;
 }
 
 /* ----------- footer */
@@ -357,4 +369,12 @@ input::placeholder {
 /*-------------modal dialog------------*/
 .modal-content {
     color: #000;
+}
+
+/*--------------media queries----------*/
+@media screen and (max-width: 1200px) {
+
+    .embed-responsive-item {
+        margin-top: 2rem;
+    }
 }

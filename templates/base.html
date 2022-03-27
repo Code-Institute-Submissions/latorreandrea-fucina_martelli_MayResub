@@ -75,12 +75,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">How to Start</a>
 
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
+                        <a class="nav-link" href="#footer">About us</a>
                     </li>
                 </ul>
                 <!--Search Form-->
@@ -151,7 +148,7 @@
     {% endblock %}
 
     <!-----empty div to create wave for footer-->
-    <div class="spacer wave mt-auto">
+    <div class="spacer wave mt-auto" id="footer">
     </div>
     <footer>
 
@@ -185,9 +182,9 @@
                         Policy:
                     </h4>
                     <ul>
-                        <li><a href="">Payment Card Security</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Shipping And Payment</a></li>
+                        <li><a href="{% url 'payment_secure' %}">Payment Card Security</a></li>
+                        <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'shipping' %}">Shipping And Payment</a></li>
                     </ul>
                 </div>
             </div>

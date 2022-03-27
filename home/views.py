@@ -8,6 +8,16 @@ def index(request):
     return render(request, "home/index.html")
 
 
-def error500(request):
-    """ A view to render 500 page """
-    return render(request, "home/500.html")
+def payment_secure(request):
+    """ A view to render payment info page """
+    return render(request, "home/payment.html")
+
+
+def shipping(request):
+    """ A view to render shipment info page """
+    return render(request, "home/shipping.html")
+
+
+def privacy(request):
+    """ A view to render privacy info page """
+    return render(request, "home/privacy.html")
