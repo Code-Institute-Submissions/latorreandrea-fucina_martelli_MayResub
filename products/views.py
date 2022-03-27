@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from accounts.models import Account
 from .forms import ProductForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -42,11 +43,10 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)  
     reviews = ProductReview.objects.filter(product=product_id)
 
-    #paginating (https://docs.djangoproject.com/en/4.0/topics/pagination/)
+    #paginating reviews (https://docs.djangoproject.com/en/4.0/topics/pagination/)
     paginator = Paginator(reviews, 10) # Show 10 reviews per page.
     page_number = request.GET.get('page')
     page_reviews = paginator.get_page(page_number)
-
 
     context = {
         'product': product,
@@ -56,6 +56,7 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def product_review(request, product_id):
     """ A view to review the selected product """
     product = get_object_or_404(Product, pk=product_id)
@@ -67,6 +68,7 @@ def product_review(request, product_id):
     return render(request, 'products/product_review.html', context)
 
 
+@login_required
 def add_review(request, product_id):
     """
     View to add review
@@ -83,10 +85,14 @@ def add_review(request, product_id):
             return redirect('product_detail', product_id=product_id)
 
 
+@login_required
 def add_product(request):
     """
     add product in store
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'only our forge master can do that')
+        return redirect(reverse('index'))
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -104,16 +110,24 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
     """delete selected product"""
+    if not request.user.is_superuser:
+        messages.error(request, 'only our forge master can do that')
+        return redirect(reverse('index'))
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted')
     return redirect(reverse('products'))
     
 
+@login_required
 def edit_product(request, product_id):
     """edit selected product"""
+    if not request.user.is_superuser:
+        messages.error(request, 'only our forge master can do that')
+        return redirect(reverse('index'))
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)

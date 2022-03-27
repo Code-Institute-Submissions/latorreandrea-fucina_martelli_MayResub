@@ -354,4 +354,7 @@ input::placeholder {
 
 }
 
-/*-------------allauth------------*/
+/*-------------modal dialog------------*/
+.modal-content {
+    color: #000;
+}
