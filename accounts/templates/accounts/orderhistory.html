@@ -25,7 +25,7 @@ MyAccount order history
             {% for order in accounts_orders_list %}
 
             <tr>
-                <td>{{order.order_number}}</td>
+                <td>{{order.order_number|truncatechars:9}}</td>
                 <td>{{order.order_total}}€ </td>
                 <td>{{order.date}}</td>
             </tr>

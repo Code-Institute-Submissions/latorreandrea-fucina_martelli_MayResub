@@ -7,125 +7,127 @@ Cart
 
 {% block content %}
 
-<div class="container-md  container-cart justify-content-center">
+<div class="container container-cart justify-content-center">
     {% if product_count > 0 %}
     <div class="row">
 
-        <div class="col-12">
-            <hr>
+        <div class="col-12 table-glass center">
+
             <h1>
                 My Cart
             </h1>
-            <span><button class="btn btn-primary px-3"><a href="{% url 'products' %}">continue shopping
-                        ></a></button></span>
+            <hr>
+            <a class="btn btn-primary px-3" href="{% url 'products' %}">continue shopping
+                ></a></button>
             <hr>
         </div>
-        <br>
-    </div>
 
-    <div class="row table-hover table-glass">
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th scope="col-3">Product Info</th>
-                    <th scope="col-3">Price</th>
-                    <th scope="col-3">Qty</th>
-                    <th scope="col-3">Modify</th>
+    </div>
+    <div class="row table-glass">
+        <div class="row table-hover table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Info</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Modify</th>
+
+                    </tr>
+                </thead>
+
+                {% for item in cart_items %}
+                <tr class="align-middle">
+                    <td>
+                        <p class="my-0"><strong>{{ item.product.name }} in {{ item.material }} </strong></p>
+                        {% if item.product.image %}
+                        <img class="img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img class="img-cart" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
+                    </td>
+                    {% if item.material == "steel" %}
+                    <td>
+                        <p class="my-0"><strong>{{ item.product.price }} each</strong><i class="fas fa-euro-sign"></i>
+                        </p>
+                    </td>
+                    {% elif item.material == "titanium" %}
+                    <td>
+                        <p class="my-0"><strong>{{ item.product.price }}<i class="fas fa-euro-sign"></i>+200<i
+                                    class="fas fa-euro-sign"></i>each</strong>
+                        </p>
+                    </td>
+                    {% endif %}
+                    <td>
+                        <div class="quantity-form col-sm w-50">
+                            <form method="POST"
+                                action="{% url 'amend_cart' id=item.product.id material=item.material %}">
+                                {% csrf_token %}
+                                <div class="input-group align-middle">
+                                    <input name="quantity" type="number" min="1" max="10" class="form-control"
+                                        placeholder="Quantity" value='{{item.quantity}}'>
+
+                                    <div>
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-primary amend-btn"><span
+                                                    aria-hidden="true"></span>Amend</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </td>
+                    <td>
+
+                        <div class="quantity-form col-sm my-0">
+
+                            <span>
+                                <form method="POST"
+                                    action="{%url 'remove_item' id=item.product.id material=item.material %}">
+                                    {% csrf_token %}
+
+
+                                    <button type="submit" class="btn btn-outline-danger remove-item-btn">Remove</button>
+
+
+                                </form>
+                            </span>
+                        </div>
+
+                    </td>
 
                 </tr>
-            </thead>
-
-            {% for item in cart_items %}
-            <tr class="align-middle">
-                <td>
-                    <p class="my-0"><strong>{{ item.product.name }} in {{ item.material }} </strong></p>
-                    {% if item.product.image %}
-                    <img class="img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                    {% else %}
-                    <img class="img-cart" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                    {% endif %}
-                </td>
-                {% if item.material == "steel" %}
-                <td>
-                    <p class="my-0"><strong>{{ item.product.price }} each</strong><i class="fas fa-euro-sign"></i>
-                    </p>
-                </td>
-                {% elif item.material == "titanium" %}
-                <td>
-                    <p class="my-0"><strong>{{ item.product.price }}<i class="fas fa-euro-sign"></i>+200<i
-                                class="fas fa-euro-sign"></i>each</strong>
-                    </p>
-                </td>
-                {% endif %}
-                <td>
-                    <div class="quantity-form col-sm w-50">
-                        <form method="POST" action="{% url 'amend_cart' id=item.product.id material=item.material %}">
-                            {% csrf_token %}
-                            <div class="input-group align-middle">
-                                <input name="quantity" type="number" min="1" max="10" class="form-control"
-                                    placeholder="Quantity" value='{{item.quantity}}'>
-
-                                <div>
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary amend-btn"><span
-                                                aria-hidden="true"></span>Amend</button>
-                                    </span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                </td>
-                <td>
-
-                    <div class="quantity-form col-sm my-0">
-
-                        <span>
-                            <form method="POST"
-                                action="{%url 'remove_item' id=item.product.id material=item.material %}">
-                                {% csrf_token %}
+                {% endfor %}
+                <div class="col-md-4 col-sm-12">
 
 
-                                <button type="submit" class="btn btn-outline-danger remove-item-btn">Remove</button>
+                    <table class="table center">
 
+                        <thead>
+                            <tr>
+                                <th class="tr-total-table" scope="col">Total</th>
+                            </tr>
+                            <tr>
 
-                            </form>
-                        </span>
-                    </div>
-
-                </td>
-
-            </tr>
-            {% endfor %}
-            <div class="col-md-4 col-sm-12">
-
-
-                <table class="table center">
-
-                    <thead>
+                            </tr>
+                        </thead>
                         <tr>
-                            <th class="tr-total-table" scope="col">Total</th>
+                            <td> <span class=" float-right" id="total">{{ total }}
+                                    <i class="fas fa-euro-sign"></i></span>
+                            </td>
                         </tr>
                         <tr>
-
+                            <td>
+                                <button class="btn btn-primary px-3"><a href="{% url 'checkout' %}">CHECKOUT
+                                        ></a></button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tr>
-                        <td> <span class=" float-right" id="total">{{ total }}
-                                <i class="fas fa-euro-sign"></i></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="btn btn-primary px-3"><a href="{% url 'checkout' %}">CHECKOUT
-                                    ></a></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </table>
+                    </table>
+                </div>
+            </table>
+        </div>
     </div>
-
 
     {%else%}
 

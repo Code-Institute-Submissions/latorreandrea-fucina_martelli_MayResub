@@ -1,6 +1,8 @@
 from django import forms
 from .models import Order, OrderLineItem
 from products.models import Product
+# https://pypi.org/project/django-countries/#the-country-object
+from django_countries.widgets import CountrySelectWidget
 
 
 class OrderForm(forms.ModelForm):
@@ -10,6 +12,7 @@ class OrderForm(forms.ModelForm):
             'full_name', 'email_address', 'phone_number', 'town_or_city',
             'street_address1', 'street_address2',
             'country', 'county', 'postcode')
+        widgets = {'country': CountrySelectWidget()}
     
     def __int__(self, *args, **kwargs):
         '''add placeholders, set autofocus for form order'''

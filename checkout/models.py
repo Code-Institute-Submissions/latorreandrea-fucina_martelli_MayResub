@@ -5,6 +5,8 @@ from django.db.models import Sum
 from django.conf import settings
 from accounts.models import Account
 from products.models import Product
+# https://pypi.org/project/django-countries/#installation
+from django_countries.fields import CountryField
 
 ORDER_STATUS = (
     ('Order Received', 'Order Received'),
@@ -26,7 +28,7 @@ class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     email_address = models.CharField(max_length=100, blank=False, default="")
-    country = models.CharField(max_length=40, blank=False)
+    country = CountryField()
     postcode = models.CharField(max_length=20, blank=True)
     town_or_city = models.CharField(max_length=40, blank=False)
     street_address1 = models.CharField(max_length=40, blank=False)

@@ -57,9 +57,9 @@ Products
             <a class="btn btn-primary px-3" href="?page={{ products.previous_page_number }}">previous</a>
             {% endif %}
 
-            <span class="current">
+            <p class="current center">
                 Page {{ products.number }} of {{ products.paginator.num_pages }}.
-            </span>
+            </p>
 
             {% if products.has_next %}
             <a class="btn btn-primary px-3" href="?page={{ products.next_page_number }}">next</a>
