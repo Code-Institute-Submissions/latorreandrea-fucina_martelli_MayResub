@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block extra_title %}
-Newsletter Signup
+Newsletter Unsubscribe
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row table-glass center">
         <div class="col-12">
-            <h1>sign up for our newsletter</h1>
+            <h1>Unsubscribe from our newsletter</h1>
             <hr>
         </div>
         <div class="col-12 text-center">
-            <form action="" method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <button class="btn btn-primary px-3" type="submit">Subscribe!</button>
+                <button class="btn btn-primary px-3" type="submit">unsubscribe</button>
             </form>
         </div>
     </div>

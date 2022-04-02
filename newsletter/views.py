@@ -12,9 +12,11 @@ def newsletter_signup(request):
     if form.is_valid():
         instance = form.save(commit=False)
         if Newsletter.objects.filter(email=instance.email).exists():
-            print("sorry this email already exist")
-        else:
+            messages.error(request, 'sorry this email already exist')
+            return render(request, "newsletter/sign_up.html")
+        else:            
             instance.save()
+            messages.success(request, 'your email is now registered!')
 
     context = {
         'form': form,
@@ -29,10 +31,12 @@ def newsletter_unsubscribe(request):
 
     if form.is_valid():
         instance = form.save(commit=False)
-        if Newsletter.objects.filter(email=instance.email).exist():
-            NewsletterUser.objects.filter(email=instance.email).delete()
+        if Newsletter.objects.filter(email=instance.email).exists():
+            Newsletter.objects.filter(email=instance.email).delete()
+            messages.success(request, 'you are no longer registered to the newsletter')
         else:
-            print("sorry this email doesn't exist")
+            messages.error(request, "sorry this email doesn't exists")
+            return render(request, "newsletter/unsubscribe.html")
 
     context = {
         'form': form,
