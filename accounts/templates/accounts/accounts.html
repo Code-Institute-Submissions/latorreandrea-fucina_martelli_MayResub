@@ -18,6 +18,8 @@ MyAccount
             <li> <a class="btn btn-primary px-3 list-inline-item" href="#">Add shipping information</a> </li>
             {% if request.user.is_superuser %}
             <li> <a class="btn btn-primary px-3 list-inline-item" href="{% url 'add_product' %}">Add Product</a></li>
+            <li> <a class="btn btn-primary px-3 list-inline-item" href="{% url 'add_product' %}">Send Newsletter!</a>
+            </li>
             {% endif %}
 
 
