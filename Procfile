@@ -1,0 +1,1 @@
+web: gunicorn fucina_martelli.wsgi:application
