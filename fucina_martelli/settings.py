@@ -179,6 +179,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    # cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 dec 2090 00:00:00 GMT',
+        'Cachecontrol': 'max_age=94608000',
+    }
     # buchet config
     AWS_STORAGE_BUCKET_NAME = 'fucina-martelli'
     AWS_S3_REGION_NAME = 'eu-west-1'
