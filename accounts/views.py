@@ -26,3 +26,4 @@ def order_history(request):
        'accounts_orders_list': orders
     }   
     return render(request, 'accounts/orderhistory.html', context)
+
