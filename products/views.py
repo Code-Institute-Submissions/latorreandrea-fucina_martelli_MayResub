@@ -101,6 +101,7 @@ def add_product(request):
             return redirect(reverse('add_product'))
         else:
             messages.error(request, 'check that you have filled in the form correctly')
+            return render(request, 'home/index.html')
 
     form = ProductForm()
     template = 'products/add_product.html'
