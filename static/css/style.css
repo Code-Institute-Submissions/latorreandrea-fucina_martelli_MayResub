@@ -236,6 +236,14 @@ h4.footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+button {
+    color: #fff !important;
+}
+
+button:focus {
+    color: rgb(114, 114, 114) !important;
+}
+
 /*------------ product detail page */
 
 .card-detail {
