@@ -551,13 +551,22 @@ to improve the seo and therefore indirectly also the marketing potential of the 
     - Would there be other pages within your own site you could link to from your chosen page?
     - Are there opportunities to link back to external websites that already rank highly on Google?
     - How can you help users discover other relevant parts of your web application?
-actually part of the selected content has been changed in the course of work. The sport we are talking about was born in russia and is managed with regard to official channels mainly by russian sports associations ... given the recent developments some sites are unusable and in protest some of these associations have preferred to suspend some of the most important events
+actually part of the selected content has been changed in the course of work. The sport we are talking about was born in Russia and is managed with regard to official channels mainly by russian sports associations ... given the recent developments some sites are unusable and in protest some of these associations have preferred to suspend some of the most important events
   
 however the world of sport is supportive and since the official youtube channels of this sport are still available, I preferred to use some of the videos that help newcomers to this sport to make some important decisions as well as to show the strengths of this sport
   
 the homepage in fact presents the basic rules for understanding this sport and is supported by videos.
   
 the site also proposes in the footer link to demonstrate to users the authority of the site and its reliability by dedicating the policy section mainly to this
+
+  7. Create a sitemap.xml to ensure searc engines will crawl every essential page on the website using a sitemap generator
+
+  8. Create a robots.txt file that tells search engines where they are not allowed (this ensure that search engines take the existence of this file in this site as a sign of quality so this improve SEO), even if in the sitemap created previously some of the links specified in robots are not mentioned, I specify in this file not to see the url deriving from the apps: accounts,add_product,edit_product,checkout
+
+  9. at this point the main work to maximize SEO is done but by not certifying a DNS we cannot complete this implementation
+
+  10. to accelerate the growth of the community that follows the Fucina Martelli brand I created a facebook group accessible from the social link in the footer of the site created specifically to reach new users also through social media (this was created for demonstration purposes only)
+  ![fucina martelli fb page](https://user-images.githubusercontent.com/80674568/162585863-92ff3e12-c81e-47f0-bd3b-8432a188ba01.PNG)
   
 
 
@@ -573,6 +582,10 @@ the site also proposes in the footer link to demonstrate to users the authority 
 - [Haikei](https://app.haikei.app/) to generate svg waves
   
 - [Youtube](https://www.youtube.com/watch?v=TBVsILIt4HM&t=15s)mastercode online to show how to create a newsletter app
+
+- [Facebook](https://www.facebook.com/FucinaMartelliBuhurtShop)facebook for create a shop in fb
+
+- [Xml-sitemaps](https://www.xml-sitemaps.com/) to generate a sitemap.xml
 
 ### Media
 - wikipedia

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /add_product/
+Disallow: /edit_product/
+Disallow: /checkout/
+Sitemap: https://fucina-martelli.herokuapp.com/sitemap.xml
