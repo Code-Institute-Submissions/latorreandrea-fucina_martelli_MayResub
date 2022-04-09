@@ -290,6 +290,9 @@ this page allows you to view the order history of the registered user.
 #### saving shipping information:
 - causing problems, this functionality has been kept on the sidelines for the time being
 
+#### discount function:
+- the functionality is set for the CRUD created for the admin, but not yet managed by any views
+
 ## TECHNOLOGIES USED
 
 ### **Syntax**
