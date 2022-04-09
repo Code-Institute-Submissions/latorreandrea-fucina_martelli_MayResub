@@ -2,9 +2,9 @@
 
 
 
-![Image of the mockup of the live website](#)
+![logo](https://user-images.githubusercontent.com/80674568/162563738-2ca6e658-b6f9-4120-955d-e92c15347d40.PNG)
 
-### [View live project here](#)
+### [View live project here](https://fucina-martelli.herokuapp.com/)
 
 
 ## Overview
@@ -76,22 +76,21 @@ The website is designed to be responsive and accessible on all devices.
  #### As a registered user/frequent visitor I want to (in addition to the anonymous user functionalities):
   5. Be able to log in.
   6. Be able to log out.
-  7. Be able to delete my account.
-  8. Be able to add personal details to make my order faster.
-  9. Be able to update personal details.
-  10. Be able view my order history.
+  7. Be able to delete my account.  
+  8. Be able to update personal details.
+  9. Be able view my order history.
 
  #### As the admin I want to:
-  11. Be able to add products to the site.
-  12. Be able to update product details (for example put a product in the special offers).
-  13. Be able to delete products from the site. 
-  14. Have unique access to all features.
+  10. Be able to add products to the site.
+  11. Be able to update product details (for example put a product in the special offers).
+  12. Be able to delete products from the site. 
+  13. Have unique access to all features.
 
   #### As the website owner I want to:
-  15. Make the website as accessible and responsive as possible.  
-  16. Use reviews to increase customer satisfaction.
-  17. Find the best way to allow communication bewteen customers and the organization.
-  19. Inform users of any changes to the regulations of this sport
+  14. Make the website as accessible and responsive as possible.  
+  15. Use reviews to increase customer satisfaction.
+  16. Find the best way to allow communication bewteen customers and the organization.
+  17. Inform users of any changes to the regulations of this sport
   
 ---
 
@@ -102,13 +101,13 @@ The website is designed to be responsive and accessible on all devices.
 - #### User needs
 
 The main goal of this website is to make order management efficient and to transmit passion in this spor in such a way as to create customer loyalty in order to increase sales too.
-Registered users will be able to see their previous orders and their current ones. In addition to that, as in most e-commerce shops, the convenience of having the personal data already saved is itself a good reason to register.
+Registered users will be able to see their previous orders and their current ones. In addition to that, for register user there is the possibility to review the products.
 
 
 
 The steps a new user would ideally take when landing onto the website are the following:
   - Explore the websites landing page, where the information will explain the user the reason to be of the site.
-  - see if there is any news on spor and if there are any special offers
+  - see if there is any news on sport
   - buy a product 
   - Log in/out.
   - Check out the links in the footer.
@@ -117,12 +116,13 @@ The website needs to enable the **User** to:
   - Easy access the features of the website.
   - Register and log in if further interested.
   - Get in touch with the website owner and/or admin.
-  - Give feedback.
+  - Give rewiews.
 
 The website needs to enable the **Website owner and/or admin** to:
   - Develop an online presence .
   - Provide an easily navigable website for users.
   - Improve the website thanks to the contacts.
+  - Add or delete products from catalougue
 
 ---
 
@@ -135,42 +135,42 @@ The website needs to enable the **Website owner and/or admin** to:
   - Only allow registered users to create and manage their own accounts.
   - Only allow registered users to check out their previous orders.
   - Only allow registered users to delete their account.
+  - All the user can register in the newsletter or not
 
 
 ---
 
 ### Skeleton and Wireframes
 
----
+#### on mobile:
+[fucinaMartelliphone.pdf](https://github.com/latorreandrea/fucina_martelli/files/8456560/fucinaMartelliphone.pdf)
+
+#### on pc/tablet:
+[PcFucina.pdf](https://github.com/latorreandrea/fucina_martelli/files/8456562/PcFucina.pdf)
 
 ## DESIGN
 
-The design of the website was created to be as simple and harmonious as possible, not to distract the user with too many color schemes and trying to bring the focus onto the products.
+The design of the website was created to be as simple but at the same time recall the Middle Ages, not to distract the user with too many color schemes and trying to bring the focus onto the products.
 
 ### **Color scheme**
 
-The colors used are variations of dark green. this color was chosen because it is the historical color of the medieval militias of northern Italy, the area of ​​origin of the owners of the site
+The colors used are variations of dark green. this color was chosen because it is the historical color of the medieval militias of northern Italy, the area of origin of the owners of the site
  
-
-
----
 
 ### **Typography**
 
-(##)
-
----
+The main font-family for this site is 'Rubik' to allow easy reading of the text to users  only for the logo the chosen font was the 'UnifrakturCook'
 
 ### **Imagery**
 
 - Currently using wikipedia images and descriptions with creative commons license
-
+-
 ---
 
 ### **Logo**
 
 - the font used for the logo is Unifraktur (used for its mefievale lines) 
-
+- the images of people in armor, were kindly offered by the Bellatores sports club to which I belong https://www.facebook.com/TeamBellatores/
 ---
 
 ## Database Model
@@ -186,8 +186,7 @@ The colors used are variations of dark green. this color was chosen because it i
 
 ![DB Data Structure](##)
 
----
-
+[fucina martelli.pdf](https://github.com/latorreandrea/fucina_martelli/files/8456593/fucina.martelli.pdf)
 ## Features
 
 The website has the following features based on:
@@ -202,6 +201,7 @@ The navigation buttons update depending on whether a user is logged in or not, a
 Home     |&#9989;        |&#9989;          |&#9989; |
 Products           |&#9989;        |&#9989;          |&#9989; |
 Product Detail           |&#9989;        |&#9989;          |&#9989; |
+Rewiev Product          |&#10060;       |&#9989;          |&#9989; |
 Product Management(Add Product)     |&#10060;       |&#10060;         |&#9989; |
 Product Management(Edit Product)     |&#10060;       |&#10060;         |&#9989; |
 Product Management(Delete Product)     |&#10060;       |&#10060;         |&#9989; |
@@ -213,43 +213,81 @@ Log in               |&#9989;        |&#10060;         |&#10060; |
 Cart |&#9989;        |&#9989;          |&#9989; |
 Checkout |&#9989;        |&#9989;          |&#9989; |
 Checkout success |&#9989;        |&#9989;          |&#9989; |
+Register to newsletter |&#9989;        |&#9989;          |&#9989; |
 
 <br>
 
-### Admin Feature
-
-
-#### Admin Functionality in the website
-- Other than through the default Django admin interface, products can be added/created, edited and removed (CRUD) directly from the website when entering with admin credentials. This feature facilitates the management of products thanks to a more friendly and direct user interface. This feature makes things easier for the website owner in case he/she needs to make changes on the products without having to access the Django admin interface.
-
-- Add new product
-![Add new product](##)
-
-- Delete Product
-![Delete Product](##)
-
-- Update/Edit product Details
-![Update product details](##)
 
 <br>
 
 ### Design Features
-(##)
+The distinctive design of this site is the medieval background and the use of glassmorphism
 
-#### Header
-#### Search Button
+### Header
+![pc header](https://user-images.githubusercontent.com/80674568/162566658-5bef60ac-3b71-4330-a774-e896055456bf.PNG)
 
-#### Navigation bar on smaller devices
+#### Navigation bar on smaller devices:
+![navbarmobile1](https://user-images.githubusercontent.com/80674568/162566662-651414fe-95f6-402c-b5f7-17f856e85c03.PNG)
+![navmobile](https://user-images.githubusercontent.com/80674568/162566664-788d8a3e-ee28-419a-9eeb-461c23c0454d.PNG)
 
+in addition to directing us to the various product categories from the nav bar, we can intuitively access our profile (if the user is logged in) and our cart
+### Search Button
+![searcbar](https://user-images.githubusercontent.com/80674568/162566761-e19a3758-abf0-4bf7-b595-c27ba4b91285.PNG)
+this search bar allows you to filter products by name and category
 
 #### Footer
+![footer](https://user-images.githubusercontent.com/80674568/162567260-ea99bdd6-4a46-4aa0-9796-c1da605bf0cb.PNG)
+the footer is divided into 3 parts, one that summarizes the history of Fucina Martelli,
+the second contains all the social channels (at the moment only the facebook one is working), and the links to subscribe to the newsletter
+the third contains the service policies
+
+## Main Page:
+
+#### Main page carousel:
+![carousel](https://user-images.githubusercontent.com/80674568/162566889-0d60f9da-17a1-4417-84f1-fb3dc9e033e2.PNG)
+a carousel of three images that takes us to the key points of the site: products, main info on buhurt and contacts and policies
+
+#### main page content:
+![maincontent](https://user-images.githubusercontent.com/80674568/162567191-c878cb25-44b2-4066-9044-7be24801c364.PNG)
+brief introduction on the sport and services of the hammer workshop to invite users to visit the shop
+the accompanying videos taken from the sport's official youtube channels provide a further explanation
+
+## My Account page (only for admins and registered users)
+![Myaccountpage](https://user-images.githubusercontent.com/80674568/162567484-20a29a3e-f198-4cdc-9127-ec1a59874832.PNG)
+This page is accessed after logging in to the site and proposes actions that are limited based on permissions (basic users will not be able to add products)
+this page allows you to view the order history of the registered user.
+
+#### Admin Functionality in the My account page
+- Other than through the default Django admin interface, products can be added/created, edited and removed (CRUD) directly from the website when entering with admin credentials. This feature facilitates the management of products thanks to a more friendly and direct user interface. This feature makes things easier for the website owner in case he/she needs to make changes on the products without having to access the Django admin interface.
+
+- Add new product
+  -the admin by accessing his user section has the option to create a product
+
+![add product 1/2](https://user-images.githubusercontent.com/80674568/162566241-21b3790c-37f8-4155-bd56-a7eb129c9e8b.jpg)
+![add product 2/2](https://user-images.githubusercontent.com/80674568/162566243-017196ea-be8d-445c-b0bb-2d20e8bb93d4.PNG)
+
+
+#### Admin Functionality in the product description page
+- Delete Product
+  - admin from the product description tab can delete it
+![delete1/2](https://user-images.githubusercontent.com/80674568/162566429-51378ca9-e2bb-42c0-9be6-c1b2dda1a9b5.PNG)
+![delete2/2](https://user-images.githubusercontent.com/80674568/162566439-390528f7-36fc-4e97-b555-a8f2f68bda72.PNG)
+
+- Update/Edit product Details
+  - the admin from the product description tab can update it
+![update1/2](https://user-images.githubusercontent.com/80674568/162566429-51378ca9-e2bb-42c0-9be6-c1b2dda1a9b5.PNG)
+![update2/2](https://user-images.githubusercontent.com/80674568/162566514-8e8138bb-d4f1-45b5-8a82-84b3a66cca50.PNG)
+
+
 
 
 ### Features left to implement
 
-#
+#### complete the functionality of the newsletter:
+- at the moment it is possible to register emails and delete them but not actually send functional newsletters
 
----
+#### saving shipping information:
+- causing problems, this functionality has been kept on the sidelines for the time being
 
 ## TECHNOLOGIES USED
 
@@ -261,12 +299,8 @@ Checkout success |&#9989;        |&#9989;          |&#9989; |
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
----
 
 ### Frameworks, Libraries & Programs
-
-
-
 - [Font Awesome](https://fontawesome.com/)
   - Used to include icons.
 
@@ -311,17 +345,28 @@ Checkout success |&#9989;        |&#9989;          |&#9989; |
   - Haikei is a web app to generate unique SVG shapes, backgrounds, and patterns – ready to use with your design tools and workflow.
 
 
-
-
-
-
-
----
-
 ## Testing
-##
 
----
+### test for unregistered users:
+
+![invitoagli utenti non registrati](https://user-images.githubusercontent.com/80674568/162567881-4128082d-f8fc-48f7-85a7-89cc7317d301.PNG)
+as an unregistered user entering the site I have the navigation bar that asks me to register or log in,
+
+![newsletter](https://user-images.githubusercontent.com/80674568/162568110-19ddad12-b3e4-40e4-bb3d-abdfb18126a2.PNG)
+i can sign up for newsletter clikking in carousel button newsletter here or in the footer link
+
+![productpage](https://user-images.githubusercontent.com/80674568/162568176-fbbd99c7-d859-4498-87b3-e47a16baf0ee.PNG)
+I can access the products via search bar and navbar
+
+
+![product description](https://user-images.githubusercontent.com/80674568/162568311-e5932e3d-9775-497d-ada3-d1273ce18f86.PNG)
+I can see the products and their descriptions, add them to the cart, choose with which material to add it. an invitation under the product image asks us to register or log in to be able to rate this product
+
+![acquisto1](https://user-images.githubusercontent.com/80674568/162568350-82e2d3a6-9d4d-4f99-9eca-dca4166f8b4d.PNG)
+adding the product to the cart to buy it, a toast appears to inform me of the action taken, and the option go to cart appears
+
+![cart](https://user-images.githubusercontent.com/80674568/162568416-f58fb68f-07d5-41dc-957b-500ab9dd36c3.PNG)
+once the products have been added by selecting the relevant material, the cart screen informs me that there is a surplus of € 200 for titanium products, if I have to adjust the quantity of the products then I can do it from the cart. The total item informs me of the expense
 
 ## API
 
@@ -331,9 +376,6 @@ To set up Stripe, proceed as follows:
 1. Register for an account at stripe.com
 2. Click on the Developers section of your account once logged in.
 3. Under Developers, click on the API keys section.
-
-![API keys](readme_files/api/api_key.png)
-
 4. Note the values for the publishable and secret keys
 5. In your local environment(env.py) and heroku, create environment variables STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY with the publishable and secret key values.
 <br><code>os.environ.setdefault('STRIPE_PUBLIC_KEY', 'YOUR_VALUE_GOES_HERE')</code>
@@ -341,17 +383,13 @@ To set up Stripe, proceed as follows:
 
 6. Back in the Developers section of your stripe account click on Webhooks
 7. Create a webhook with the url of your website <url>/checkout/wh/
-
-![Webhook](readme_files/stripe/wb_created.png)
-
 8. Select the payment_intent.payment_failed and payment_intent.succeeded as events to send.
 9. Note the key created for this webhook
 10. In your local environment(env.py) and heroku, create environment variable STRIPE_WH_SECRET with the secret values
 <code>os.environ.setdefault('STRIPE_WH_SECRET', 'YOUR_VALUE_GOES_HERE')</code>
-
 11. Feel free to test out the webhook and note the success/fail attempts for troubleshooting.
 ![Webhook](readme_files/stripe/webhook_successful.png)
-12. For futher information please check Stripe Testing in the [(TESTING.md) ](TESTING.md) file.
+
 
 <br>
 
@@ -385,10 +423,7 @@ To deploy this application to Heroku, run the following steps:
 
 1. Create an account at heroku.com
 2. Create an app, give it a name and select a region.
-3. Under resources search for postgres, and add a Postgres database to the app.
-
-![Heroku Postgres](readme_files/heroku/heroku_postgres.png)
-    
+3. Under resources search for postgres, and add a Postgres database to the app.    
 4. Note the DATABASE_URL, this can be set as an environment variable in Heroku and your local deployment(env.py)
 5. Install the plugins dj-database-url and psycopg2-binary.
 6. Run pip3 freeze > requirements.txt so both are added to the requirements.txt file
@@ -404,13 +439,7 @@ To deploy this application to Heroku, run the following steps:
 16. Disable collectstatic in Heroku before any code is pushed using the command heroku config:set DISABLE_COLLECTSTATIC=1
 17. Push the code to Heroku using the command git push heroku master.
 18. Ensure the following environment variables are set in Heroku.
-
-![Heroku Env variables](readme_files/heroku/heroku_vars.png)
-
-19. Connect the app to GitHub, and enable automatic deploys from main
-
-![Heroku Postgres](readme_files/heroku/heroku_connected.png)
-    
+19. Connect the app to GitHub, and enable automatic deploys from main    
 20. Click deploy to deploy your application to Heroku for the first time
 21. Click on the link provided to access the application
 22. If you encounter any issues accessing the build logs is a good way to troubleshoot the issue
@@ -453,14 +482,6 @@ To set up AWS S3 Bucket, proceed as follows:
 27. AWS S3 Stored static files.
 ![AWS Bucket Policy](readme_files/aws/aws_objects.png)
 
-### Github
-
-#### Forking the Repository
-By forking the GitHub Repository a copy of the original repository is made on the GitHub account. To view and/or to make  changes without affecting the original repository: 
-1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](##).
-3. At the top of the repository, on the right side of the page, select "Fork".
-4. You should now have a copy of the original repository in your GitHub account.
 
   ---
 
@@ -472,6 +493,10 @@ By forking the GitHub Repository a copy of the original repository is made on th
 - [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page") for the Boostrap features.
 
 - [Vanilla-titl.js](https://micku7zu.github.io/vanilla-tilt.js/) a smooth 3D tilt javascript library for moving the descriptions cards
+  
+- [Haikei](https://app.haikei.app/) to generate svg waves
+  
+- [Youtube](https://www.youtube.com/watch?v=TBVsILIt4HM&t=15s)mastercode online to show how to create a newsletter app
 
 ### Media
 - wikipedia
