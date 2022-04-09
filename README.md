@@ -55,12 +55,15 @@ The website is designed to be responsive and accessible on all devices.
 - [Github](#github)
   - [Forking the repository](#forking-the-repository)
   - [Creating a Clone](#creating-a-clone)
+  
+9. [MARKETING AND SEO](#marketing-and-seo)
 
-9. [CREDITS](#credits)
 
-10. [REFERENCES](#references)
+10. [CREDITS](#credits)
 
-11. [ACKNOWLEDGEMENTS](#acknowledgements)
+
+
+
 
 ## UX
 
@@ -373,8 +376,43 @@ the payment made on the site is actually recorded and goes by stripe:
 
 ### test for registered users:
 
+![login](https://user-images.githubusercontent.com/80674568/162582349-5a4615bb-947d-4fcc-83ae-7e3fe5ac142e.PNG)
+![login2](https://user-images.githubusercontent.com/80674568/162582353-5245c808-c7cb-47d5-9e5f-bf14e93f6c23.PNG)
+the registered user can log in and access a personal menu
+![myaccount](https://user-images.githubusercontent.com/80674568/162582637-9d382d77-d83f-4755-8824-8c2338362a5b.PNG)
+
+![order history](https://user-images.githubusercontent.com/80674568/162582681-0335283d-2312-4410-9bb0-4c46220778af.PNG)
+the registered user can access his order history
+
+![rategear](https://user-images.githubusercontent.com/80674568/162582442-46fcc4ea-af60-4416-b879-17e939061732.PNG)
+the registered user can review the products
+![review results](https://user-images.githubusercontent.com/80674568/162582591-d8bb07fe-2fad-4e1a-97b7-2026678fb573.PNG)
+the latest reviews will be displayed and the average rating of the product will appear under the product
+
+### test for Admin:
+
+![addtest](https://user-images.githubusercontent.com/80674568/162582811-8209c8b7-68d4-4db4-ad7c-82e3b6d0b594.PNG)
+![addtest2](https://user-images.githubusercontent.com/80674568/162582816-2cca3c1e-d592-4d4b-8e02-f3240a8e562b.PNG)
 
 
+admins can add products from the My account actions
+
+![updatetest](https://user-images.githubusercontent.com/80674568/162583032-800feedb-992e-4b76-99f0-e5d04ddd5045.PNG)
+![updatetest2](https://user-images.githubusercontent.com/80674568/162583034-13bbde94-d0f7-4b77-987c-ea738d2c4302.PNG)
+
+
+the admin can modify the product from the product description sheet
+
+![updatetest3](https://user-images.githubusercontent.com/80674568/162583040-b7684ad0-d429-46c4-be85-c8a1b4988bb2.PNG)
+![updatetest4](https://user-images.githubusercontent.com/80674568/162583043-3c8427a1-6332-4ffc-aecf-bcc4d1fb1cd8.PNG)
+![updatetestresult](https://user-images.githubusercontent.com/80674568/162583045-59cc7d61-6fe0-44da-a611-d0c8a72e9454.PNG)
+this is the results
+
+![deletetest](https://user-images.githubusercontent.com/80674568/162583275-1b6ef809-6183-49ca-8695-277e388cdd01.PNG)
+![deletetest2](https://user-images.githubusercontent.com/80674568/162583281-1e67f8f0-ae97-4b0f-987e-3ff5da83ab1f.PNG)
+the admin from the product description has the possibility to delete it
+![deletetest3](https://user-images.githubusercontent.com/80674568/162583332-5ca30bc1-31ef-4c87-b25b-b0cb06c5f840.PNG)
+the product will be deleted from the product list and a message confirms that the product has been deleted
 
 ## API
 
@@ -490,8 +528,38 @@ To set up AWS S3 Bucket, proceed as follows:
 27. AWS S3 Stored static files.
 ![AWS Bucket Policy](readme_files/aws/aws_objects.png)
 
+## MARKETING AND SEO
+to improve the seo and therefore indirectly also the marketing potential of the site itself, I followed a series of steps:
+  1. Brainstorm  general topics:
+  ![brainstorming](https://user-images.githubusercontent.com/80674568/162583586-0d848392-6093-4f09-8e5f-332873dda3fb.jpg)
+  2. Brain dump possible keywords for each of the general topics so the list is:
+  what is buhurt?, what does it mean?, where i can find a team?, there are rules?, is that a discipline?, where i can buy armor?,  why the cost are never clear?
+  can buy an used armour?, what are the injuries?, buhurt in eu, buhurt in Italy, tournaments, buhurt weapon, buhurt rules, buhurt team, buhurt cost,  buhurt training
+  buhurt ranking team, buhurt official channel, maximum wheight of armour, maximum wheight of weapons, eu buhurt turnament, official tournament,  unofficial tournament
+  time period allowed?, historicity in the armour?, how big are the match?, there is a refree?, what is the scope of the combat?
+  3. Research brain dump of ideas in Google Search:
+  ![Research ideas in Google Search2)](https://user-images.githubusercontent.com/80674568/162583722-4e341047-4739-44d6-85dc-f10888f7b99a.PNG)
+  ![Research ideas in Google Search](https://user-images.githubusercontent.com/80674568/162583726-edab8a44-2da9-4b5f-af36-e39d5101555f.PNG)
+  4. from this long list I have chosen 5 concepts among the most searched on google helping me with the next phase
+  5. Assess choices for relevance and authoritativeness, and dig into the data available on keyword volume and competition using wordtracker.com
+  ![Assess choices ](https://user-images.githubusercontent.com/80674568/162583843-5260842f-2c47-4812-8135-737b2f78b470.PNG)
+  6. to choose which content to give to the homepage I asked myself a series of questions:
+    - What do your users need?
+    - What information and features can you provide to meet those needs?
+    - How can you make the information easy to understand?
+    - How can you demonstrate expertise, authoritativeness and trustworthiness in your content?
+    - Would there be other pages within your own site you could link to from your chosen page?
+    - Are there opportunities to link back to external websites that already rank highly on Google?
+    - How can you help users discover other relevant parts of your web application?
+actually part of the selected content has been changed in the course of work. The sport we are talking about was born in russia and is managed with regard to official channels mainly by russian sports associations ... given the recent developments some sites are unusable and in protest some of these associations have preferred to suspend some of the most important events
+  
+however the world of sport is supportive and since the official youtube channels of this sport are still available, I preferred to use some of the videos that help newcomers to this sport to make some important decisions as well as to show the strengths of this sport
+  
+the homepage in fact presents the basic rules for understanding this sport and is supported by videos.
+  
+the site also proposes in the footer link to demonstrate to users the authority of the site and its reliability by dedicating the policy section mainly to this
+  
 
-  ---
 
 ## CREDITS
 
