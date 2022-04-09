@@ -184,9 +184,7 @@ The main font-family for this site is 'Rubik' to allow easy reading of the text 
 
 - This model contains all fields stored in the database collections with their data type and mimics the structure of what is actually stored in the Postgres database.
 
-![DB Data Structure](##)
-
-[fucina martelli.pdf](https://github.com/latorreandrea/fucina_martelli/files/8456593/fucina.martelli.pdf)
+[DB Data Structure](https://github.com/latorreandrea/fucina_martelli/files/8456593/fucina.martelli.pdf)
 ## Features
 
 The website has the following features based on:
@@ -362,11 +360,21 @@ I can access the products via search bar and navbar
 ![product description](https://user-images.githubusercontent.com/80674568/162568311-e5932e3d-9775-497d-ada3-d1273ce18f86.PNG)
 I can see the products and their descriptions, add them to the cart, choose with which material to add it. an invitation under the product image asks us to register or log in to be able to rate this product
 
-![acquisto1](https://user-images.githubusercontent.com/80674568/162568350-82e2d3a6-9d4d-4f99-9eca-dca4166f8b4d.PNG)
+![add to cart](https://user-images.githubusercontent.com/80674568/162568350-82e2d3a6-9d4d-4f99-9eca-dca4166f8b4d.PNG)
 adding the product to the cart to buy it, a toast appears to inform me of the action taken, and the option go to cart appears
 
 ![cart](https://user-images.githubusercontent.com/80674568/162568416-f58fb68f-07d5-41dc-957b-500ab9dd36c3.PNG)
 once the products have been added by selecting the relevant material, the cart screen informs me that there is a surplus of € 200 for titanium products, if I have to adjust the quantity of the products then I can do it from the cart. The total item informs me of the expense
+
+![test](https://user-images.githubusercontent.com/80674568/162571374-9e50007e-67c6-45de-a04d-67cced918e50.PNG)
+![test2](https://user-images.githubusercontent.com/80674568/162571491-c0e5dbba-67ab-4ca3-a9b8-e24187f06169.PNG)
+the payment made on the site is actually recorded and goes by stripe:
+![stripe confirms](https://user-images.githubusercontent.com/80674568/162581743-a33444f2-bb6f-4e97-9719-5e2afd9ce997.PNG)
+
+### test for registered users:
+
+
+
 
 ## API
 
