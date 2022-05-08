@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 import json
 import stripe
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -109,8 +110,22 @@ def success(request, order_number):
         order.account = account
         order.save()
         
-        
+    # Send Email to the customer from django documentation https://docs.djangoproject.com/en/4.0/topics/email/
+    print(order.email_address)
+    print('this is a message')
+    print(order)
+
+    send_mail(
+        'Purchase confirmation of ' + order_number,
+        'Your order '+ str(order.order_total) +' has been send to : ' + order.full_name +' in '+ order.street_address1 + order.town_or_city + order.postcode + order.county,
+        'fucinamartelli@example.com',
+        [order.email_address],
+        fail_silently=False
+    )
+
+    
     messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
+
     if 'cart' in request.session:
         del request.session['cart']
 
