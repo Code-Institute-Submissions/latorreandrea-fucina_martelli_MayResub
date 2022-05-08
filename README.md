@@ -461,7 +461,6 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 <br><code>DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')</code>
 
 8. You will also need to set the variables EMAIL_HOST_PASS and EMAIL_HOST_USER in your production instance, for example Heroku.
-9. For futher information please check GMAIL testing in the [(TESTING.md) ](TESTING.md) file, bottom of the page (Other Features).
 
 ---
 
