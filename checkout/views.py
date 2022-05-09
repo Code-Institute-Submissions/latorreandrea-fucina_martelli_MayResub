@@ -117,7 +117,7 @@ def success(request, order_number):
 
     send_mail(
         'Purchase confirmation of ' + order_number,
-        'Your order '+ str(order.order_total) +' has been send to : ' + order.full_name +' in '+ order.street_address1 + order.town_or_city + order.postcode + order.county,
+        'Your order ' + str(order.order_total) + ' has been send to : ' + order.full_name +' in ' + order.street_address1 + order.town_or_city + order.postcode + order.county,
         'fucinamartelli@example.com',
         [order.email_address],
         fail_silently=False
