@@ -111,18 +111,12 @@ def success(request, order_number):
         order.save()
         
     # Send Email to the customer from django documentation https://docs.djangoproject.com/en/4.0/topics/email/
-    print(order.email_address)
-    print('this is a message')
-    print(order)
-
-    send_mail(
-        'Purchase confirmation of ' + order_number,
-        'Your order ' + str(order.order_total) + ' has been send to : ' + order.full_name +' in ' + order.street_address1 + order.town_or_city + order.postcode + order.county,
-        'fucinamartelli@example.com',
-        [order.email_address],
-        fail_silently=False
-    )
-
+       
+    EmailBody = 'Your order ' + str(order.order_total) + ' has been send to : ' + order.full_name + ' in ' + order.street_address1 + order.town_or_city + order.postcode + order.county
+    emailSubject = "Hi, " + (order.full_name) + 'Purchase confirmation of ' + str(order_number)
+    senderEmail = "fucina@martelli.com"
+    receiverEmail = order.email_address
+    send_mail(emailSubject, EmailBody, senderEmail, [receiverEmail], fail_silently=False)
     
     messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
 
