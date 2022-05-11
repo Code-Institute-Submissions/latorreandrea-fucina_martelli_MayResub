@@ -21,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
-#DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+
 ALLOWED_HOSTS = ['fucina-martelli.herokuapp.com', 'localhost']
 
 
