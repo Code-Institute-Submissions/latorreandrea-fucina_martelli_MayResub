@@ -99,8 +99,7 @@ def checkout(request):
 def success(request, order_number):
     '''.
     View to render success page for payments
-    '''
-    
+    '''  
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
@@ -108,21 +107,20 @@ def success(request, order_number):
         account = Account.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.account = account
-        order.save()
-        
-    # Send Email to the customer from django documentation https://docs.djangoproject.com/en/4.0/topics/email/
-       
-    EmailBody = 'Your order ' + str(order.order_total) + ' has been send to : ' + order.full_name + ' in ' + order.street_address1 + order.town_or_city + order.postcode + order.county
-    emailSubject = "Hi, " + (order.full_name) + 'Purchase confirmation of ' + str(order_number)
-    senderEmail = "fucina@martelli.com"
-    receiverEmail = order.email_address
-    send_mail(emailSubject, EmailBody, senderEmail, [receiverEmail], fail_silently=False)
+        order.save() 
     
     messages.success(request, f'Order {order_number} Sended, a confermation email will be sent to {order.email_address}')
-
+    # Send Email to the customer from django documentation https://docs.djangoproject.com/en/4.0/topics/email/
+       
+    email_body = 'Your order ' + str(order.order_total) + ' has been send to : ' + order.full_name + ' in ' + order.street_address1 + order.town_or_city + order.postcode + order.county
+    email_subject = "Hi, " + (order.full_name) + 'Purchase confirmation of ' + str(order_number)
+    sender_email = settings.EMAIL_HOST_USER
+    receiver_email = order.email_address
+    send_mail(email_subject, email_body, sender_email, [receiver_email], fail_silently=False)
+    
     if 'cart' in request.session:
         del request.session['cart']
-
+    
     template = 'checkout/success.html'
     context = {
         'order': order,
