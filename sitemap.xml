@@ -1,591 +1,482 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
--<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>1.00</priority>
-
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=helmets_neck</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=chest</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=arm</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=leg</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=swords</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=maces</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=polearms</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?category=shields</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/cart/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/newsletter/sign_up/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/newsletter/unsubscribe/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/payment-card-security/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/privacy/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/shipping-and-payment/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/1/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/2/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/3/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/4/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/5/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/6/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?page=2</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?page=3</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/11/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/7/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/12/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/14/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/10/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/13/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/15/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/9/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/16/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/17/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/18/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/19/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/1/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/2/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/3/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/4/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/5/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/6/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/products/?page=1</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/11/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/7/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/12/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/14/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/10/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/13/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/15/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/9/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/16/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/17/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/18/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/19/</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F1%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F2%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F3%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F4%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F5%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F6%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F11%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F7%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F12%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F14%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F10%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F13%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F15%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F9%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F16%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F17%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F18%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F19%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F1%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F2%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F3%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F4%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F5%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F6%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F11%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F7%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F12%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F14%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F10%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F13%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F15%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F9%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F16%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F17%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F18%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F19%2F</loc>
+  <lastmod>2022-05-15T09:47:06+00:00</lastmod>
+  <priority>0.33</priority>
 </url>
 
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=helmets_neck</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=chest</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=arm</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=leg</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=swords</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=maces</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=polearms</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?category=shields</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/cart/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/newsletter/sign_up/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/newsletter/unsubscribe/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/payment-card-security/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/privacy/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/shipping-and-payment/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/1/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/2/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/3/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/4/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/5/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/6/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?page=2</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/7/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/9/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/password/reset/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/1/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/2/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/3/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/4/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/5/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/6/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/products/?page=1</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/7/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=/products/delete_product/9/</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F1%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F2%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F3%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F4%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F5%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F6%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F7%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fdelete_product%2F9%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.41</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F1%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F2%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F3%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F4%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F5%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F6%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F7%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://fucina-martelli.herokuapp.com/accounts/login/?next=%2Fproducts%2Fdelete_product%2F9%2F</loc>
-
-<lastmod>2022-04-09T17:33:09+00:00</lastmod>
-
-<priority>0.33</priority>
-
-</url>
 
 </urlset>
